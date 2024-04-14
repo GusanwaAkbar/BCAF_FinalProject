@@ -14,6 +14,8 @@ public class FileEntity {
     private String checker1;
     private String checker2;
 
+    private Boolean isDone;
+
     @Lob
     private byte[] fileContent; // Menyimpan konten file dalam bentuk byte[]
 
