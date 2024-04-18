@@ -2,6 +2,8 @@ package coid.bcafinance.mgaspringfinalexam.repo;
 
 import coid.bcafinance.mgaspringfinalexam.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.Optional;
 
@@ -18,6 +20,12 @@ public interface UserRepo extends JpaRepository<User, Long> {
     Optional<User> findTop1ByUsernameOrNoHpOrEmailAndIsRegistered(String usr, String noHp, String mail, Boolean isRegis);
 
     Optional<User> findByUsername(String usr);
+
+
+    // Add custom query method to retrieve namaLengkap based on username
+
+    @Query("SELECT u.namaLengkap FROM User u WHERE u.username = :username")
+    Optional<String> findNamaLengkapByUsername(@Param("username") String username);
 
     /**
      JPQL untuk Query ke Akses

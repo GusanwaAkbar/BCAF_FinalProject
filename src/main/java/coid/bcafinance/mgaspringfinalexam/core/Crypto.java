@@ -65,7 +65,7 @@ public class Crypto {
         //ENCRYPT -> bdcc9507be280e3e5489a5dce01b42ea
         //KEY -> aafd12f438cae52538b479e2089ddec2f06cb58faafd12f6
 
-        String strToDecrypt = "5eb279dd4ab4b51e4c8a70d8728ddb20437eaaa1dd2321d98de012117e1a45bb4f0c7ff312a67582dd46fa157f857cd96a9cc45f2959db75ae857780fc697a0af2e16a964848d781522c29dba32fea374c7fbde99a52a10be1b6ca5051b43ec0021662ca638c27e6095ce673eb176275b72e02ac9c35fa85da366b0cf13e137a0579a31967ec64472f9220cac9c0cc70d328c5434c29d88da60b0734917e8599b1a884f0a0a61aab56532edef4b20e8edb0281c48889a5409141eecbe6b47e60a256dd7756031edb105159af2fcaa86aaa920a073915a6e30631a75e206fda0c8f8e83b84f0bfac737a92d3e065f658ea05d2a7a12607e71b21c4e26ca9db901";//put text to decrypt in here
+        String strToDecrypt = "5eb279dd4ab4b51e4c8a70d8728ddb20437eaaa1dd2321d98de012117e1a45bb4f0c7ff312a67582dd46fa157f857cd96a9cc45f2959db75ae857780fc697a0a028fc555029d1a450f98cf900aacb0a0d79deeaf1a61adc09e713e16574fee3978fe1cea0eeb5fede06fd0935943df9cb16a96a51f094aaef66642323d33ae51566390acd40ee5e7a43dd2ae68bc6b885fcbfc475cd944f40f7f7973f7cfa99e1d40a6238460bf8c9f412b2e7494191502d96772b996d53ebafbac7449d26f9f5023425e163f3b5b6a90511f823686e5089966ed19a967d23317d26eed8a32e21d7080ef256e285d98345af138ef487c47dc47985aeaf3fbca882b5b0b3faacb";//put text to decrypt in here
         String decriptionResult = new Crypto().performDecrypt(strToDecrypt);
         System.out.println("Decryption Result : "+decriptionResult);
         System.out.println("Untuk VIVO X5 DEFAULT AJA BELUM DI SET ".length());

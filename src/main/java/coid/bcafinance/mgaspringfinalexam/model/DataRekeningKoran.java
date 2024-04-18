@@ -1,12 +1,16 @@
 package coid.bcafinance.mgaspringfinalexam.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class DataRekeningKoran {
 
+    //data atribut
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,23 +19,71 @@ public class DataRekeningKoran {
 
     private String deskripsi;
 
+    @Column(columnDefinition = "VARCHAR(255) DEFAULT 'Belum Verifikasi'")
     private String verifikasi;
 
-    @Column(columnDefinition = "boolean default false")
+    @Column(columnDefinition = "bit default 0")
     private boolean checker1;
 
-    @Column(columnDefinition = "boolean default false")
+    @Column(columnDefinition = "bit default 0")
     private boolean checker2;
 
-    // IF WANT TO NOT SHOW DATA REKENING KORAN
-//    @ManyToOne
-//    @JoinColumn(name = "rekening_koran_id")
-//    private RekeningKoran rekeningKoran;
+
+    //audit trail
+    @Column(nullable = true, updatable = false)
+    @CreationTimestamp
+    private Date created;
+
+
+    @Column(nullable = true)
+    @UpdateTimestamp
+    private Date updated;
+
+    @Column(nullable = true, columnDefinition = "varchar(255) default 'admin'")
+    private String createdBy;
+
+    @Column(nullable = true, columnDefinition = "varchar(255) default 'admin'")
+    private String updatedBy;
 
     @ManyToOne
     @JoinColumn(name = "rekening_koran_id")
     @JsonBackReference // Indicates that this is the non-owning side of the relationship
     private RekeningKoran rekeningKoran;
+
+
+
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    public Date getUpdated() {
+        return updated;
+    }
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+
+// IF WANT TO NOT SHOW DATA REKENING KORAN
+//    @ManyToOne
+//    @JoinColumn(name = "rekening_koran_id")
+//    private RekeningKoran rekeningKoran;
+
+
 
 
     // Constructors, getters, and setters

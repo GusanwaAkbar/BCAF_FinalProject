@@ -5,6 +5,8 @@ package coid.bcafinance.mgaspringfinalexam.controller;
 import coid.bcafinance.mgaspringfinalexam.model.DataRekeningKoran;
 import coid.bcafinance.mgaspringfinalexam.model.RekeningKoran;
 import coid.bcafinance.mgaspringfinalexam.service.DataRekeningKoranService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.opencsv.CSVReader;
 import org.json.simple.JSONObject;
@@ -13,6 +15,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.*;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -47,6 +51,7 @@ public class DataRekeningKoranController {
 
     // Other mappings...
 
+
     @PostMapping("/{rekeningKoranId}/upload-csv")
     public ResponseEntity<String> uploadCSV(@PathVariable("rekeningKoranId") Long rekeningKoranId, @RequestParam("file") MultipartFile file) {
         if (file.isEmpty()) {
@@ -55,8 +60,10 @@ public class DataRekeningKoranController {
 
         try (BufferedReader br = new BufferedReader(new InputStreamReader(file.getInputStream()))) {
             CSVReader csvReader = new CSVReader(br);
-            String[] headers = csvReader.readNext();
+            ObjectMapper objectMapper = new ObjectMapper();
+            RestTemplate restTemplate = new RestTemplate();
 
+            String[] headers = csvReader.readNext();
             int nominalIndex = -1;
             int deskripsiIndex = -1;
             int verifikasiIndex = -1;
@@ -78,25 +85,18 @@ public class DataRekeningKoranController {
                 }
             }
 
-            if (nominalIndex == -1 || deskripsiIndex == -1 ) {
+            if (nominalIndex == -1 || deskripsiIndex == -1) {
                 return new ResponseEntity<>("CSV file is missing required columns", HttpStatus.BAD_REQUEST);
             }
 
-
             List<DataRekeningKoran> dataList = new ArrayList<>();
             String[] line;
-            // Create ObjectMapper instance
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             while ((line = csvReader.readNext()) != null) {
                 double nominal = Double.parseDouble(line[nominalIndex]);
                 String deskripsi = line[deskripsiIndex];
                 String verifikasi = "tidak otomatis";
                 boolean checker1 = false; // Default value
                 boolean checker2 = false; // Default value
-
-
-
 
                 //can use either checker column or not
                 if (checker1Index != -1 && line.length > checker1Index && !line[checker1Index].isEmpty()) {
@@ -120,59 +120,42 @@ public class DataRekeningKoranController {
                 if (rekeningKoran.isPresent()) {
                     dataRekeningKoran.setRekeningKoran(rekeningKoran.get());
                     dataRekeningKoranService.saveOrUpdateDataRekeningKoran(dataRekeningKoran);
-
-                    ObjectWriter objectWriter = objectMapper.writerWithDefaultPrettyPrinter();
-                    String jsonData = objectWriter.writeValueAsString(dataRekeningKoran);
-
-                    // Append JSON data to file
-                    try {
-                        Files.write(Paths.get("./json"), jsonData.getBytes(), StandardOpenOption.APPEND);
-                    } catch (IOException e) {
-                        e.printStackTrace(); // Handle the exception appropriately
-                    }
+                    dataList.add(dataRekeningKoran); // Add data to the list
                 } else {
                     return new ResponseEntity<>("RekeningKoran with ID " + rekeningKoranId + " not found", HttpStatus.NOT_FOUND);
                 }
-
-                //while end
             }
 
-            // Convert the array to JSON
-            try {
-                // Convert List to array for ObjectMapper
-                DataRekeningKoran[] dataArray = dataList.toArray(new DataRekeningKoran[dataList.size()]);
+            // Convert the list to array
+            DataRekeningKoran[] dataArray = dataList.toArray(new DataRekeningKoran[dataList.size()]);
 
-                // Serialize array to JSON
-                String jsonData = objectMapper.writeValueAsString(dataArray);
+            // Convert array to JSON
+            String jsonData = objectMapper.writeValueAsString(dataArray);
 
-                System.out.println("===============================");
-                System.out.println(jsonData);
+            // Send JSON data to Django
+            HttpHeaders headers2 = new HttpHeaders();
+            headers2.setContentType(MediaType.APPLICATION_JSON);
+            HttpEntity<String> requestEntity = new HttpEntity<>(jsonData, headers2);
+            ResponseEntity<String> responseEntity = restTemplate.postForEntity("http://127.0.0.1:8000/predict_csv", requestEntity, String.class);
+            String predictedLabel = responseEntity.getBody();
 
-                // Write JSON data to file
-                File jsonFile = new File("data.json");
-                objectMapper.writeValue(jsonFile, dataArray);
+            // Deserialize predicted label JSON array
+            JsonNode jsonNode = objectMapper.readTree(predictedLabel);
+            String[] predictedLabels = objectMapper.convertValue(jsonNode.get("predicted_labels"), String[].class);
 
-                String jsonRequest = jsonData;
-                RestTemplate restTemplate = new RestTemplate();
-//
-                // Send JSON data to Django
-                HttpHeaders headers2 = new HttpHeaders();
-                headers2.setContentType(MediaType.APPLICATION_JSON);
-                HttpEntity<String> requestEntity = new HttpEntity<>(jsonRequest, headers2);
-                ResponseEntity<String> responseEntity = restTemplate.postForEntity("http://django-server/predict_csv", requestEntity, String.class);
-                String predictedLabel = responseEntity.getBody();
-
-                if (!predictedLabel.isEmpty())
-                {
-                    while((line = csvReader.readNext()) != null)
-                    {
-                        String verifikasi = "tidak otomatis";
-                    }
-                }
-
-            } catch (IOException e) {
-                e.printStackTrace(); // Handle the exception appropriately
+            // Update verifikasi data in database with new data from predicted label
+            for (int i = 0; i < dataArray.length && i < predictedLabels.length; i++) {
+                dataArray[i].setVerifikasi(predictedLabels[i]);
+                dataRekeningKoranService.saveOrUpdateDataRekeningKoran(dataArray[i]); // Save or update in the database
             }
+
+            return new ResponseEntity<>("CSV file uploaded successfully", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Failed to upload CSV file: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
 
 
 //
@@ -206,46 +189,53 @@ public class DataRekeningKoranController {
 
 
 
-            return new ResponseEntity<>("CSV file uploaded successfully", HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>("Failed to upload CSV file: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
+//            return new ResponseEntity<>("CSV file uploaded successfully", HttpStatus.OK);
+//        } catch (Exception e) {
+//            return new ResponseEntity<>("Failed to upload CSV file: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//    }
 
 
 
     @PostMapping("/{rekeningKoranId}")
-    public ResponseEntity<DataRekeningKoran> createDataRekeningKoran(@PathVariable("rekeningKoranId") Long rekeningKoranId, @Valid @RequestBody DataRekeningKoran dataRekeningKoran) {
+    public ResponseEntity<DataRekeningKoran> createDataRekeningKoran(@PathVariable("rekeningKoranId") Long rekeningKoranId, @Valid @RequestBody DataRekeningKoran dataRekeningKoran) throws JsonProcessingException {
         // Set the RekeningKoran for the DataRekeningKoran
         Optional<RekeningKoran> rekeningKoran = dataRekeningKoranService.getRekeningKoranById(rekeningKoranId);
+        ObjectMapper objectMapper = new ObjectMapper();
+        RestTemplate restTemplate = new RestTemplate();
+
         if (rekeningKoran.isPresent()) {
             dataRekeningKoran.setRekeningKoran(rekeningKoran.get());
+
+            // Serialize dataRekeningKoran to JSON
+            //ObjectMapper objectMapper = new ObjectMapper();
+            String jsonData = objectMapper.writeValueAsString(dataRekeningKoran);
+
+            // Prepare headers and request entity
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            HttpEntity<String> requestEntity = new HttpEntity<>(jsonData, headers);
+
+            // Send POST request to Django
+            ResponseEntity<String> responseEntity = restTemplate.postForEntity("http://127.0.0.1:8000/predict_single_data", requestEntity, String.class);
+            String predictedLabel = responseEntity.getBody();
+
+            // Deserialize predicted label JSON array
+            JsonNode jsonNode = objectMapper.readTree(predictedLabel);
+            String[] predictedLabels = objectMapper.convertValue(jsonNode.get("predicted_labels"), String[].class);
+
+            String verifikasi = predictedLabels[0];
+            dataRekeningKoran.setVerifikasi(verifikasi);
+
+            // Save or update DataRekeningKoran
             DataRekeningKoran createdDataRekeningKoran = dataRekeningKoranService.saveOrUpdateDataRekeningKoran(dataRekeningKoran);
+
             return new ResponseEntity<>(createdDataRekeningKoran, HttpStatus.CREATED);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
-    @GetMapping("/{rekeningKoranId}")
-    public ResponseEntity<Page<DataRekeningKoran>> getAllDataRekeningKoransByRekeningKoranId(@PathVariable("rekeningKoranId") Long rekeningKoranId, Pageable pageable) {
-        Page<DataRekeningKoran> dataRekeningKorans = dataRekeningKoranService.getAllDataRekeningKoransByRekeningKoranId(rekeningKoranId, pageable);
-        return new ResponseEntity<>(dataRekeningKorans, HttpStatus.OK);
-    }
-
-    @PutMapping("/{rekeningKoranId}/{dataRekeningKoranId}")
-    public ResponseEntity<DataRekeningKoran> updateDataRekeningKoran(@PathVariable("rekeningKoranId") Long rekeningKoranId, @PathVariable("dataRekeningKoranId") Long dataRekeningKoranId, @Valid @RequestBody DataRekeningKoran dataRekeningKoran) {
-        // Update DataRekeningKoran with the given ID and associate it with the given RekeningKoran ID
-        Optional<DataRekeningKoran> existingDataRekeningKoran = dataRekeningKoranService.getDataRekeningKoranById(dataRekeningKoranId);
-        if (existingDataRekeningKoran.isPresent()) {
-            dataRekeningKoran.setId(dataRekeningKoranId);
-            dataRekeningKoran.setRekeningKoran(new RekeningKoran(rekeningKoranId)); // Set the RekeningKoran with the provided ID
-            DataRekeningKoran updatedDataRekeningKoran = dataRekeningKoranService.saveOrUpdateDataRekeningKoran(dataRekeningKoran);
-            return new ResponseEntity<>(updatedDataRekeningKoran, HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
 
 
     @DeleteMapping("/{rekeningKoranId}/{dataRekeningKoranId}")

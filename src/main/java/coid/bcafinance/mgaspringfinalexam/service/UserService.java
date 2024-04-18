@@ -228,7 +228,7 @@ public class UserService implements IService<User>, UserDetailsService {
         Optional<User> optionalUser = null;
 
         try {
-            username = jwtUtility.getUsernameFromToken(authorizationHeader.substring(7));
+            username = jwtUtility.getUsernameFromToken(Crypto.performDecrypt(authorizationHeader.substring(7)));
 
             optionalUser = userRepo.findByUsername(username);
 

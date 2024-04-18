@@ -3,8 +3,10 @@ package coid.bcafinance.mgaspringfinalexam.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -16,30 +18,74 @@ public class RekeningKoran {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
+    //data atribut
     private String namaRekeningKoran;
 
-    @Column( nullable = false, updatable = false)
-    @CreationTimestamp
-    private Date created;
-
-    @Column(columnDefinition = "boolean default false")
+    @Column(columnDefinition = "bit default 0")
     private boolean isDone;
 
 
+    //audit trail
+    @Column(nullable = true, updatable = false)
+    @CreationTimestamp
+    private Date created;
 
 
+    @Column(nullable = true)
+    @UpdateTimestamp
+    private Date updated;
+
+    @Column(nullable = true, columnDefinition = "varchar(255) default 'admin'")
+    private String createdBy;
+
+    @Column(nullable = true, columnDefinition = "varchar(255) default 'admin'")
+    private String updatedBy;
 
     @OneToMany(mappedBy = "rekeningKoran", cascade = CascadeType.ALL, orphanRemoval = true)
     //@JsonIgnore // Ignore this property during JSON serialization
     @JsonManagedReference // Indicates that this is the owning side of the relationship
     private List<DataRekeningKoran> dataRekeningKoranList;
 
-    public RekeningKoran() {
 
+
+
+
+    //setter and getter
+    public Date getUpdated() {
+        return updated;
     }
-    public RekeningKoran(Long id) {
-        this.id = id;
+
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public String getUpdatedBy() {
+        return updatedBy;
+    }
+
+    public void setUpdatedBy(String updatedBy) {
+        this.updatedBy = updatedBy;
+    }
+
+
+
+
+
+
+
+
+
+
+
 
     // Constructors, getters, and setters
 

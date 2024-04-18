@@ -1,0 +1,2913 @@
+[ {
+  "id" : 2086,
+  "nominal" : 200000.0,
+  "deskripsi" : "Pembayaran SHF",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2087,
+  "nominal" : 200000.0,
+  "deskripsi" : "Pembayaran S    H F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2088,
+  "nominal" : 200000.0,
+  "deskripsi" : "Pembyaran S                                    H                        F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2089,
+  "nominal" : 200000.0,
+  "deskripsi" : "Pembyaran S    !@#3             H                        F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2090,
+  "nominal" : 200000.0,
+  "deskripsi" : "Pembayaran",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2091,
+  "nominal" : 200000.0,
+  "deskripsi" : "!23abch",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2092,
+  "nominal" : 200000.0,
+  "deskripsi" : "asd",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2093,
+  "nominal" : 200000.0,
+  "deskripsi" : "abcabcabc",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2094,
+  "nominal" : 200000.0,
+  "deskripsi" : "SHF",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2095,
+  "nominal" : 210000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2096,
+  "nominal" : 220000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2097,
+  "nominal" : 230000.0,
+  "deskripsi" : "untuk bayar s            h            ff",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2098,
+  "nominal" : 240000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2099,
+  "nominal" : 250000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2100,
+  "nominal" : 260000.0,
+  "deskripsi" : "untuk bayar s            h            ff",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2101,
+  "nominal" : 270000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2102,
+  "nominal" : 280000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2103,
+  "nominal" : 290000.0,
+  "deskripsi" : "untuk bayar s            h            ff",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2104,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2105,
+  "nominal" : 310000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2106,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pembayaran S ettl ement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2107,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pembayaran Sett lement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2108,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pembayaran Settle ment",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2109,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pembayaran Settlem ent",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2110,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pkemayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2111,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pembayaram Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2112,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pembayaran Settleme nt",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2113,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2114,
+  "nominal" : 300000.0,
+  "deskripsi" : "abbcc",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2115,
+  "nominal" : 300000.0,
+  "deskripsi" : "ab ac bc",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2116,
+  "nominal" : 300000.0,
+  "deskripsi" : "baacab",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2117,
+  "nominal" : 300000.0,
+  "deskripsi" : "a bacabcb",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2118,
+  "nominal" : 310000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2119,
+  "nominal" : 320000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2120,
+  "nominal" : 330000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2121,
+  "nominal" : 340000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2122,
+  "nominal" : 350000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2123,
+  "nominal" : 360000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2124,
+  "nominal" : 370000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2125,
+  "nominal" : 380000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2126,
+  "nominal" : 390000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2127,
+  "nominal" : 400000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2128,
+  "nominal" : 410000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2129,
+  "nominal" : 420000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2130,
+  "nominal" : 400000.0,
+  "deskripsi" : "Pembayaran F idusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2131,
+  "nominal" : 400000.0,
+  "deskripsi" : "Pembayaran Fiidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2132,
+  "nominal" : 400000.0,
+  "deskripsi" : "Pembayaran Fid usia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2133,
+  "nominal" : 400000.0,
+  "deskripsi" : "Pembayaran Fidus ia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2134,
+  "nominal" : 400000.0,
+  "deskripsi" : "abccba",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2135,
+  "nominal" : 400000.0,
+  "deskripsi" : "abccbaa",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2136,
+  "nominal" : 400000.0,
+  "deskripsi" : "abcabcc",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2137,
+  "nominal" : 400000.0,
+  "deskripsi" : "abcabcab",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2138,
+  "nominal" : 358000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2139,
+  "nominal" : 368800.0,
+  "deskripsi" : "Pembayaran Fidusiia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2140,
+  "nominal" : 379600.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2141,
+  "nominal" : 390400.0,
+  "deskripsi" : "Pembayaran Fidusai",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2142,
+  "nominal" : 401200.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2143,
+  "nominal" : 412000.0,
+  "deskripsi" : "Pembayaran Fidusiia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2144,
+  "nominal" : 422800.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2145,
+  "nominal" : 433600.0,
+  "deskripsi" : "Pembayaran Fidusai",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2146,
+  "nominal" : 444400.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2147,
+  "nominal" : 455200.0,
+  "deskripsi" : "Pembayaran Fidusiia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2148,
+  "nominal" : 466000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2149,
+  "nominal" : 476800.0,
+  "deskripsi" : "Pembayaran Fidusai",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2150,
+  "nominal" : 501000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2151,
+  "nominal" : 501500.0,
+  "deskripsi" : "Pembayaran Pinaly",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2152,
+  "nominal" : 502000.0,
+  "deskripsi" : "Pembayaran Pinlty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2153,
+  "nominal" : 502500.0,
+  "deskripsi" : "Pembayaran Pina ty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2154,
+  "nominal" : 503000.0,
+  "deskripsi" : "abccba",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2155,
+  "nominal" : 503500.0,
+  "deskripsi" : "abccbaa",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2156,
+  "nominal" : 504000.0,
+  "deskripsi" : "abcabcc",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2157,
+  "nominal" : 504500.0,
+  "deskripsi" : "abcabcab",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2158,
+  "nominal" : 470000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2159,
+  "nominal" : 480000.0,
+  "deskripsi" : "Pembayaran Pinlaty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2160,
+  "nominal" : 490000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2161,
+  "nominal" : 500000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2162,
+  "nominal" : 510000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2163,
+  "nominal" : 520000.0,
+  "deskripsi" : "Pembayaran Pinaly",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2164,
+  "nominal" : 530000.0,
+  "deskripsi" : "Pembayaran Pinlty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2165,
+  "nominal" : 540000.0,
+  "deskripsi" : "Pembayaran Pina ty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2166,
+  "nominal" : 550000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2167,
+  "nominal" : 560000.0,
+  "deskripsi" : "Pembayaran Pinlaty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2168,
+  "nominal" : 570000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2169,
+  "nominal" : 580000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2170,
+  "nominal" : 603000.0,
+  "deskripsi" : "Pembayaran U  M K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2171,
+  "nominal" : 613500.0,
+  "deskripsi" : "Pembayaran UMMKK",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2172,
+  "nominal" : 624000.0,
+  "deskripsi" : "Pembayaran UKM",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2173,
+  "nominal" : 634500.0,
+  "deskripsi" : "Pembayaran U                M                    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2174,
+  "nominal" : 645000.0,
+  "deskripsi" : "Pembayaran U   M    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2175,
+  "nominal" : 655500.0,
+  "deskripsi" : "Pembayaran U  M     K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2176,
+  "nominal" : 666000.0,
+  "deskripsi" : "Pembayaran U  M   K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2177,
+  "nominal" : 676500.0,
+  "deskripsi" : "Pembayaran U  M  K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2178,
+  "nominal" : 687000.0,
+  "deskripsi" : "acbacb",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2179,
+  "nominal" : 697500.0,
+  "deskripsi" : "abacab",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2180,
+  "nominal" : 708000.0,
+  "deskripsi" : "abcabc",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2181,
+  "nominal" : 718500.0,
+  "deskripsi" : "abbacc",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2182,
+  "nominal" : 729000.0,
+  "deskripsi" : "Pembayaran U  M K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2183,
+  "nominal" : 739500.0,
+  "deskripsi" : "Pembayaran UMMKK",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2184,
+  "nominal" : 750000.0,
+  "deskripsi" : "Pembayaran UKM",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2185,
+  "nominal" : 760500.0,
+  "deskripsi" : "Pembayaran U                M                    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2186,
+  "nominal" : 771000.0,
+  "deskripsi" : "Pembayaran U   M    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2187,
+  "nominal" : 781500.0,
+  "deskripsi" : "Pembayaran U  M     K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2188,
+  "nominal" : 792000.0,
+  "deskripsi" : "Pembayaran U  M   K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2189,
+  "nominal" : 802500.0,
+  "deskripsi" : "Pembayaran U  M  K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2190,
+  "nominal" : 100000.0,
+  "deskripsi" : "Pembayaran SHF",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2191,
+  "nominal" : 130000.0,
+  "deskripsi" : "Pembayaran S    H F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2192,
+  "nominal" : 160000.0,
+  "deskripsi" : "Pembyaran S                                    H                        F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2193,
+  "nominal" : 190000.0,
+  "deskripsi" : "Pembyaran S    !@#3             H                        F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2194,
+  "nominal" : 220000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2195,
+  "nominal" : 250000.0,
+  "deskripsi" : "untuk bayar s            h            ff",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2196,
+  "nominal" : 280000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2197,
+  "nominal" : 310000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2198,
+  "nominal" : 340000.0,
+  "deskripsi" : "SHF",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2199,
+  "nominal" : 370000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2200,
+  "nominal" : 400000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2201,
+  "nominal" : 430000.0,
+  "deskripsi" : "untuk bayar s            h            ff",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2202,
+  "nominal" : 460000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2203,
+  "nominal" : 490000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2204,
+  "nominal" : 520000.0,
+  "deskripsi" : "untuk bayar s            h            ff",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2205,
+  "nominal" : 550000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2206,
+  "nominal" : 580000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2207,
+  "nominal" : 610000.0,
+  "deskripsi" : "untuk bayar s            h            ff",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2208,
+  "nominal" : 640000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2209,
+  "nominal" : 670000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2210,
+  "nominal" : 700000.0,
+  "deskripsi" : "Pembayaran S ettl ement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2211,
+  "nominal" : 730000.0,
+  "deskripsi" : "Pembayaran Sett lement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2212,
+  "nominal" : 760000.0,
+  "deskripsi" : "Pembayaran Settle ment",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2213,
+  "nominal" : 790000.0,
+  "deskripsi" : "Pembayaran Settlem ent",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2214,
+  "nominal" : 820000.0,
+  "deskripsi" : "Pkemayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2215,
+  "nominal" : 850000.0,
+  "deskripsi" : "Pembayaram Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2216,
+  "nominal" : 880000.0,
+  "deskripsi" : "Pembayaran Settleme nt",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2217,
+  "nominal" : 910000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2218,
+  "nominal" : 940000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2219,
+  "nominal" : 970000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2220,
+  "nominal" : 1000000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2221,
+  "nominal" : 1030000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2222,
+  "nominal" : 1060000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2223,
+  "nominal" : 1090000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2224,
+  "nominal" : 1120000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2225,
+  "nominal" : 1150000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2226,
+  "nominal" : 1180000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2227,
+  "nominal" : 1210000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2228,
+  "nominal" : 1240000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2229,
+  "nominal" : 1270000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2230,
+  "nominal" : 1300000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2231,
+  "nominal" : 1330000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2232,
+  "nominal" : 1360000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2233,
+  "nominal" : 1390000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2234,
+  "nominal" : 1420000.0,
+  "deskripsi" : "Pembayaran F idusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2235,
+  "nominal" : 1450000.0,
+  "deskripsi" : "Pembayaran Fiidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2236,
+  "nominal" : 1480000.0,
+  "deskripsi" : "Pembayaran Fid usia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2237,
+  "nominal" : 1510000.0,
+  "deskripsi" : "Pembayaran Fidus ia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2238,
+  "nominal" : 1540000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2239,
+  "nominal" : 1570000.0,
+  "deskripsi" : "Pembayaran Fidusiia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2240,
+  "nominal" : 1600000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2241,
+  "nominal" : 1630000.0,
+  "deskripsi" : "Pembayaran Fidusai",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2242,
+  "nominal" : 1660000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2243,
+  "nominal" : 1690000.0,
+  "deskripsi" : "Pembayaran Fidusiia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2244,
+  "nominal" : 1720000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2245,
+  "nominal" : 1750000.0,
+  "deskripsi" : "Pembayaran Fidusai",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2246,
+  "nominal" : 1780000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2247,
+  "nominal" : 1810000.0,
+  "deskripsi" : "Pembayaran Fidusiia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2248,
+  "nominal" : 1840000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2249,
+  "nominal" : 1870000.0,
+  "deskripsi" : "Pembayaran Fidusai",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2250,
+  "nominal" : 1900000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2251,
+  "nominal" : 1930000.0,
+  "deskripsi" : "Pembayaran Fidusiia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2252,
+  "nominal" : 1960000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2253,
+  "nominal" : 1990000.0,
+  "deskripsi" : "Pembayaran Fidusai",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2254,
+  "nominal" : 2020000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2255,
+  "nominal" : 2050000.0,
+  "deskripsi" : "Pembayaran Pinaly",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2256,
+  "nominal" : 2080000.0,
+  "deskripsi" : "Pembayaran Pinlty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2257,
+  "nominal" : 2110000.0,
+  "deskripsi" : "Pembayaran Pina ty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2258,
+  "nominal" : 2140000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2259,
+  "nominal" : 2170000.0,
+  "deskripsi" : "Pembayaran Pinaly",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2260,
+  "nominal" : 2200000.0,
+  "deskripsi" : "Pembayaran Pinlty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2261,
+  "nominal" : 2230000.0,
+  "deskripsi" : "Pembayaran Pina ty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2262,
+  "nominal" : 2260000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2263,
+  "nominal" : 2290000.0,
+  "deskripsi" : "Pembayaran Pinlaty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2264,
+  "nominal" : 2320000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2265,
+  "nominal" : 2350000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2266,
+  "nominal" : 2380000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2267,
+  "nominal" : 2410000.0,
+  "deskripsi" : "Pembayaran Pinaly",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2268,
+  "nominal" : 2440000.0,
+  "deskripsi" : "Pembayaran Pinlty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2269,
+  "nominal" : 2470000.0,
+  "deskripsi" : "Pembayaran Pina ty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2270,
+  "nominal" : 2500000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2271,
+  "nominal" : 2530000.0,
+  "deskripsi" : "Pembayaran Pinlaty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2272,
+  "nominal" : 2560000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2273,
+  "nominal" : 2590000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2274,
+  "nominal" : 2620000.0,
+  "deskripsi" : "Pembayaran U  M K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2275,
+  "nominal" : 2650000.0,
+  "deskripsi" : "Pembayaran UMMKK",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2276,
+  "nominal" : 2680000.0,
+  "deskripsi" : "Pembayaran UKM",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2277,
+  "nominal" : 2710000.0,
+  "deskripsi" : "Pembayaran UM                    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2278,
+  "nominal" : 2740000.0,
+  "deskripsi" : "Pembayaran U  M K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2279,
+  "nominal" : 2770000.0,
+  "deskripsi" : "Pembayaran UMMKK",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2280,
+  "nominal" : 2800000.0,
+  "deskripsi" : "Pembayaran UKM",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2281,
+  "nominal" : 2830000.0,
+  "deskripsi" : "Pembayaran UM                    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2282,
+  "nominal" : 2860000.0,
+  "deskripsi" : "Pembayaran U  M K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2283,
+  "nominal" : 2890000.0,
+  "deskripsi" : "Pembayaran UMMKK",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2284,
+  "nominal" : 2920000.0,
+  "deskripsi" : "Pembayaran UKM",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2285,
+  "nominal" : 2950000.0,
+  "deskripsi" : "Pembayaran UM                    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2286,
+  "nominal" : 2980000.0,
+  "deskripsi" : "Pembayaran U  M K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2287,
+  "nominal" : 3010000.0,
+  "deskripsi" : "Pembayaran UMMKK",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2288,
+  "nominal" : 3040000.0,
+  "deskripsi" : "Pembayaran UKM",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2289,
+  "nominal" : 3070000.0,
+  "deskripsi" : "Pembayaran UM                    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2290,
+  "nominal" : 3100000.0,
+  "deskripsi" : "Pembayaran U  M K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2291,
+  "nominal" : 3130000.0,
+  "deskripsi" : "Pembayaran UMMKK",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2292,
+  "nominal" : 3160000.0,
+  "deskripsi" : "Pembayaran UKM",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2293,
+  "nominal" : 3190000.0,
+  "deskripsi" : "Pembayaran UM                    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2294,
+  "nominal" : 200000.0,
+  "deskripsi" : "Pembayaran SHF",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2295,
+  "nominal" : 200000.0,
+  "deskripsi" : "Pembayaran S    H F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2296,
+  "nominal" : 200000.0,
+  "deskripsi" : "Pembyaran S                                    H                        F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2297,
+  "nominal" : 200000.0,
+  "deskripsi" : "Pembyaran S    !@#3             H                        F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2298,
+  "nominal" : 200000.0,
+  "deskripsi" : "Pembayaran",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2299,
+  "nominal" : 200000.0,
+  "deskripsi" : "!23abch",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2300,
+  "nominal" : 200000.0,
+  "deskripsi" : "asd",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2301,
+  "nominal" : 200000.0,
+  "deskripsi" : "abcabcabc",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2302,
+  "nominal" : 200000.0,
+  "deskripsi" : "SHF",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2303,
+  "nominal" : 210000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2304,
+  "nominal" : 220000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2305,
+  "nominal" : 230000.0,
+  "deskripsi" : "untuk bayar s            h            ff",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2306,
+  "nominal" : 240000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2307,
+  "nominal" : 250000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2308,
+  "nominal" : 260000.0,
+  "deskripsi" : "untuk bayar s            h            ff",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2309,
+  "nominal" : 270000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2310,
+  "nominal" : 280000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2311,
+  "nominal" : 290000.0,
+  "deskripsi" : "untuk bayar s            h            ff",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2312,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2313,
+  "nominal" : 310000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2314,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pembayaran S ettl ement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2315,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pembayaran Sett lement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2316,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pembayaran Settle ment",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2317,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pembayaran Settlem ent",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2318,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pkemayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2319,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pembayaram Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2320,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pembayaran Settleme nt",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2321,
+  "nominal" : 300000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2322,
+  "nominal" : 300000.0,
+  "deskripsi" : "abbcc",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2323,
+  "nominal" : 300000.0,
+  "deskripsi" : "ab ac bc",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2324,
+  "nominal" : 300000.0,
+  "deskripsi" : "baacab",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2325,
+  "nominal" : 300000.0,
+  "deskripsi" : "a bacabcb",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2326,
+  "nominal" : 310000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2327,
+  "nominal" : 320000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2328,
+  "nominal" : 330000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2329,
+  "nominal" : 340000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2330,
+  "nominal" : 350000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2331,
+  "nominal" : 360000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2332,
+  "nominal" : 370000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2333,
+  "nominal" : 380000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2334,
+  "nominal" : 390000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2335,
+  "nominal" : 400000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2336,
+  "nominal" : 410000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2337,
+  "nominal" : 420000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2338,
+  "nominal" : 400000.0,
+  "deskripsi" : "Pembayaran F idusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2339,
+  "nominal" : 400000.0,
+  "deskripsi" : "Pembayaran Fiidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2340,
+  "nominal" : 400000.0,
+  "deskripsi" : "Pembayaran Fid usia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2341,
+  "nominal" : 400000.0,
+  "deskripsi" : "Pembayaran Fidus ia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2342,
+  "nominal" : 400000.0,
+  "deskripsi" : "abccba",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2343,
+  "nominal" : 400000.0,
+  "deskripsi" : "abccbaa",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2344,
+  "nominal" : 400000.0,
+  "deskripsi" : "abcabcc",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2345,
+  "nominal" : 400000.0,
+  "deskripsi" : "abcabcab",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2346,
+  "nominal" : 358000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2347,
+  "nominal" : 368800.0,
+  "deskripsi" : "Pembayaran Fidusiia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2348,
+  "nominal" : 379600.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2349,
+  "nominal" : 390400.0,
+  "deskripsi" : "Pembayaran Fidusai",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2350,
+  "nominal" : 401200.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2351,
+  "nominal" : 412000.0,
+  "deskripsi" : "Pembayaran Fidusiia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2352,
+  "nominal" : 422800.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2353,
+  "nominal" : 433600.0,
+  "deskripsi" : "Pembayaran Fidusai",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2354,
+  "nominal" : 444400.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2355,
+  "nominal" : 455200.0,
+  "deskripsi" : "Pembayaran Fidusiia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2356,
+  "nominal" : 466000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2357,
+  "nominal" : 476800.0,
+  "deskripsi" : "Pembayaran Fidusai",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2358,
+  "nominal" : 501000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2359,
+  "nominal" : 501500.0,
+  "deskripsi" : "Pembayaran Pinaly",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2360,
+  "nominal" : 502000.0,
+  "deskripsi" : "Pembayaran Pinlty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2361,
+  "nominal" : 502500.0,
+  "deskripsi" : "Pembayaran Pina ty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2362,
+  "nominal" : 503000.0,
+  "deskripsi" : "abccba",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2363,
+  "nominal" : 503500.0,
+  "deskripsi" : "abccbaa",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2364,
+  "nominal" : 504000.0,
+  "deskripsi" : "abcabcc",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2365,
+  "nominal" : 504500.0,
+  "deskripsi" : "abcabcab",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2366,
+  "nominal" : 470000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2367,
+  "nominal" : 480000.0,
+  "deskripsi" : "Pembayaran Pinlaty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2368,
+  "nominal" : 490000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2369,
+  "nominal" : 500000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2370,
+  "nominal" : 510000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2371,
+  "nominal" : 520000.0,
+  "deskripsi" : "Pembayaran Pinaly",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2372,
+  "nominal" : 530000.0,
+  "deskripsi" : "Pembayaran Pinlty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2373,
+  "nominal" : 540000.0,
+  "deskripsi" : "Pembayaran Pina ty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2374,
+  "nominal" : 550000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2375,
+  "nominal" : 560000.0,
+  "deskripsi" : "Pembayaran Pinlaty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2376,
+  "nominal" : 570000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2377,
+  "nominal" : 580000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2378,
+  "nominal" : 603000.0,
+  "deskripsi" : "Pembayaran U  M K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2379,
+  "nominal" : 613500.0,
+  "deskripsi" : "Pembayaran UMMKK",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2380,
+  "nominal" : 624000.0,
+  "deskripsi" : "Pembayaran UKM",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2381,
+  "nominal" : 634500.0,
+  "deskripsi" : "Pembayaran U                M                    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2382,
+  "nominal" : 645000.0,
+  "deskripsi" : "Pembayaran U   M    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2383,
+  "nominal" : 655500.0,
+  "deskripsi" : "Pembayaran U  M     K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2384,
+  "nominal" : 666000.0,
+  "deskripsi" : "Pembayaran U  M   K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2385,
+  "nominal" : 676500.0,
+  "deskripsi" : "Pembayaran U  M  K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2386,
+  "nominal" : 687000.0,
+  "deskripsi" : "acbacb",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2387,
+  "nominal" : 697500.0,
+  "deskripsi" : "abacab",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2388,
+  "nominal" : 708000.0,
+  "deskripsi" : "abcabc",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2389,
+  "nominal" : 718500.0,
+  "deskripsi" : "abbacc",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2390,
+  "nominal" : 729000.0,
+  "deskripsi" : "Pembayaran U  M K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2391,
+  "nominal" : 739500.0,
+  "deskripsi" : "Pembayaran UMMKK",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2392,
+  "nominal" : 750000.0,
+  "deskripsi" : "Pembayaran UKM",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2393,
+  "nominal" : 760500.0,
+  "deskripsi" : "Pembayaran U                M                    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2394,
+  "nominal" : 771000.0,
+  "deskripsi" : "Pembayaran U   M    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2395,
+  "nominal" : 781500.0,
+  "deskripsi" : "Pembayaran U  M     K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2396,
+  "nominal" : 792000.0,
+  "deskripsi" : "Pembayaran U  M   K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2397,
+  "nominal" : 802500.0,
+  "deskripsi" : "Pembayaran U  M  K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2398,
+  "nominal" : 100000.0,
+  "deskripsi" : "Pembayaran SHF",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2399,
+  "nominal" : 130000.0,
+  "deskripsi" : "Pembayaran S    H F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2400,
+  "nominal" : 160000.0,
+  "deskripsi" : "Pembyaran S                                    H                        F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2401,
+  "nominal" : 190000.0,
+  "deskripsi" : "Pembyaran S    !@#3             H                        F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2402,
+  "nominal" : 220000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2403,
+  "nominal" : 250000.0,
+  "deskripsi" : "untuk bayar s            h            ff",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2404,
+  "nominal" : 280000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2405,
+  "nominal" : 310000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2406,
+  "nominal" : 340000.0,
+  "deskripsi" : "SHF",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2407,
+  "nominal" : 370000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2408,
+  "nominal" : 400000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2409,
+  "nominal" : 430000.0,
+  "deskripsi" : "untuk bayar s            h            ff",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2410,
+  "nominal" : 460000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2411,
+  "nominal" : 490000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2412,
+  "nominal" : 520000.0,
+  "deskripsi" : "untuk bayar s            h            ff",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2413,
+  "nominal" : 550000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2414,
+  "nominal" : 580000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2415,
+  "nominal" : 610000.0,
+  "deskripsi" : "untuk bayar s            h            ff",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2416,
+  "nominal" : 640000.0,
+  "deskripsi" : "Pak Budi SH  F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2417,
+  "nominal" : 670000.0,
+  "deskripsi" : "Pak budi S  H   F",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2418,
+  "nominal" : 700000.0,
+  "deskripsi" : "Pembayaran S ettl ement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2419,
+  "nominal" : 730000.0,
+  "deskripsi" : "Pembayaran Sett lement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2420,
+  "nominal" : 760000.0,
+  "deskripsi" : "Pembayaran Settle ment",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2421,
+  "nominal" : 790000.0,
+  "deskripsi" : "Pembayaran Settlem ent",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2422,
+  "nominal" : 820000.0,
+  "deskripsi" : "Pkemayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2423,
+  "nominal" : 850000.0,
+  "deskripsi" : "Pembayaram Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2424,
+  "nominal" : 880000.0,
+  "deskripsi" : "Pembayaran Settleme nt",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2425,
+  "nominal" : 910000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2426,
+  "nominal" : 940000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2427,
+  "nominal" : 970000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2428,
+  "nominal" : 1000000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2429,
+  "nominal" : 1030000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2430,
+  "nominal" : 1060000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2431,
+  "nominal" : 1090000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2432,
+  "nominal" : 1120000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2433,
+  "nominal" : 1150000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2434,
+  "nominal" : 1180000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2435,
+  "nominal" : 1210000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2436,
+  "nominal" : 1240000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2437,
+  "nominal" : 1270000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2438,
+  "nominal" : 1300000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2439,
+  "nominal" : 1330000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2440,
+  "nominal" : 1360000.0,
+  "deskripsi" : "Pembyaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2441,
+  "nominal" : 1390000.0,
+  "deskripsi" : "Pembayaran Settlement",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2442,
+  "nominal" : 1420000.0,
+  "deskripsi" : "Pembayaran F idusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2443,
+  "nominal" : 1450000.0,
+  "deskripsi" : "Pembayaran Fiidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2444,
+  "nominal" : 1480000.0,
+  "deskripsi" : "Pembayaran Fid usia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2445,
+  "nominal" : 1510000.0,
+  "deskripsi" : "Pembayaran Fidus ia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2446,
+  "nominal" : 1540000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2447,
+  "nominal" : 1570000.0,
+  "deskripsi" : "Pembayaran Fidusiia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2448,
+  "nominal" : 1600000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2449,
+  "nominal" : 1630000.0,
+  "deskripsi" : "Pembayaran Fidusai",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2450,
+  "nominal" : 1660000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2451,
+  "nominal" : 1690000.0,
+  "deskripsi" : "Pembayaran Fidusiia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2452,
+  "nominal" : 1720000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2453,
+  "nominal" : 1750000.0,
+  "deskripsi" : "Pembayaran Fidusai",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2454,
+  "nominal" : 1780000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2455,
+  "nominal" : 1810000.0,
+  "deskripsi" : "Pembayaran Fidusiia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2456,
+  "nominal" : 1840000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2457,
+  "nominal" : 1870000.0,
+  "deskripsi" : "Pembayaran Fidusai",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2458,
+  "nominal" : 1900000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2459,
+  "nominal" : 1930000.0,
+  "deskripsi" : "Pembayaran Fidusiia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2460,
+  "nominal" : 1960000.0,
+  "deskripsi" : "Pembayaran Fidusia",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2461,
+  "nominal" : 1990000.0,
+  "deskripsi" : "Pembayaran Fidusai",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2462,
+  "nominal" : 2020000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2463,
+  "nominal" : 2050000.0,
+  "deskripsi" : "Pembayaran Pinaly",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2464,
+  "nominal" : 2080000.0,
+  "deskripsi" : "Pembayaran Pinlty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2465,
+  "nominal" : 2110000.0,
+  "deskripsi" : "Pembayaran Pina ty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2466,
+  "nominal" : 2140000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2467,
+  "nominal" : 2170000.0,
+  "deskripsi" : "Pembayaran Pinaly",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2468,
+  "nominal" : 2200000.0,
+  "deskripsi" : "Pembayaran Pinlty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2469,
+  "nominal" : 2230000.0,
+  "deskripsi" : "Pembayaran Pina ty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2470,
+  "nominal" : 2260000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2471,
+  "nominal" : 2290000.0,
+  "deskripsi" : "Pembayaran Pinlaty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2472,
+  "nominal" : 2320000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2473,
+  "nominal" : 2350000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2474,
+  "nominal" : 2380000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2475,
+  "nominal" : 2410000.0,
+  "deskripsi" : "Pembayaran Pinaly",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2476,
+  "nominal" : 2440000.0,
+  "deskripsi" : "Pembayaran Pinlty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2477,
+  "nominal" : 2470000.0,
+  "deskripsi" : "Pembayaran Pina ty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2478,
+  "nominal" : 2500000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2479,
+  "nominal" : 2530000.0,
+  "deskripsi" : "Pembayaran Pinlaty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2480,
+  "nominal" : 2560000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2481,
+  "nominal" : 2590000.0,
+  "deskripsi" : "Pembayaran Pinalty",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2482,
+  "nominal" : 2620000.0,
+  "deskripsi" : "Pembayaran U  M K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2483,
+  "nominal" : 2650000.0,
+  "deskripsi" : "Pembayaran UMMKK",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2484,
+  "nominal" : 2680000.0,
+  "deskripsi" : "Pembayaran UKM",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2485,
+  "nominal" : 2710000.0,
+  "deskripsi" : "Pembayaran UM                    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2486,
+  "nominal" : 2740000.0,
+  "deskripsi" : "Pembayaran U  M K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2487,
+  "nominal" : 2770000.0,
+  "deskripsi" : "Pembayaran UMMKK",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2488,
+  "nominal" : 2800000.0,
+  "deskripsi" : "Pembayaran UKM",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2489,
+  "nominal" : 2830000.0,
+  "deskripsi" : "Pembayaran UM                    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2490,
+  "nominal" : 2860000.0,
+  "deskripsi" : "Pembayaran U  M K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2491,
+  "nominal" : 2890000.0,
+  "deskripsi" : "Pembayaran UMMKK",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2492,
+  "nominal" : 2920000.0,
+  "deskripsi" : "Pembayaran UKM",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2493,
+  "nominal" : 2950000.0,
+  "deskripsi" : "Pembayaran UM                    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2494,
+  "nominal" : 2980000.0,
+  "deskripsi" : "Pembayaran U  M K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2495,
+  "nominal" : 3010000.0,
+  "deskripsi" : "Pembayaran UMMKK",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2496,
+  "nominal" : 3040000.0,
+  "deskripsi" : "Pembayaran UKM",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2497,
+  "nominal" : 3070000.0,
+  "deskripsi" : "Pembayaran UM                    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2498,
+  "nominal" : 3100000.0,
+  "deskripsi" : "Pembayaran U  M K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2499,
+  "nominal" : 3130000.0,
+  "deskripsi" : "Pembayaran UMMKK",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2500,
+  "nominal" : 3160000.0,
+  "deskripsi" : "Pembayaran UKM",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+}, {
+  "id" : 2501,
+  "nominal" : 3190000.0,
+  "deskripsi" : "Pembayaran UM                    K",
+  "verifikasi" : "tidak otomatis",
+  "checker1" : false,
+  "checker2" : false
+} ]
