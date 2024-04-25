@@ -35,8 +35,9 @@ public class RekeningKoranService {
         return rekeningKoranRepository.findById(id);
     }
 
+
     @Transactional
-    public RekeningKoran saveOrUpdateRekeningKoran(RekeningKoran rekeningKoran) {
+    public RekeningKoran saveRekeningKoran(RekeningKoran rekeningKoran) {
         // Retrieve the currently authenticated user's username
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
@@ -55,6 +56,44 @@ public class RekeningKoranService {
         // Save or update the RekeningKoran entity
         return rekeningKoranRepository.save(rekeningKoran);
     }
+
+
+    @Transactional
+    public RekeningKoran updateRekeningKoran(RekeningKoran rekeningKoran) {
+        // Retrieve the currently authenticated user's username
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String username = authentication.getName();
+
+        // Retrieve the namaLengkap by username
+        Optional<String> namaLengkapOptional = userRepository.findNamaLengkapByUsername(username);
+        if (namaLengkapOptional.isEmpty()) {
+            // Handle the case where namaLengkap is not found
+            // You can throw an exception, log an error, or handle it based on your application's requirements
+        }
+        String namaLengkap = namaLengkapOptional.get();
+
+        // Set createdBy and updatedBy fields
+        rekeningKoran.setCreatedBy(namaLengkap);
+        rekeningKoran.setUpdatedBy(namaLengkap);
+
+        // Retrieve the existing RekeningKoran entity from the database
+        Optional<RekeningKoran> existingRekeningKoranOptional = rekeningKoranRepository.findById(rekeningKoran.getId());
+        if (existingRekeningKoranOptional.isPresent()) {
+            RekeningKoran existingRekeningKoran = existingRekeningKoranOptional.get();
+
+            // Update the fields of the existing entity with the values from the updated entity
+            existingRekeningKoran.setNamaRekeningKoran(rekeningKoran.getNamaRekeningKoran());
+            // Update other fields as needed
+
+            // Save the updated entity
+            return rekeningKoranRepository.save(existingRekeningKoran);
+        } else {
+            // If the entity with the given ID does not exist, you can handle it according to your application's requirements
+            // For example, you can throw an exception or return null
+            return null;
+        }
+    }
+
 
     public void deleteRekeningKoran(Long id) {
         rekeningKoranRepository.deleteById(id);

@@ -1,8 +1,16 @@
 package coid.bcafinance.mgaspringfinalexam.model;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.springframework.beans.PropertyValues;
+
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "MstUser")
@@ -12,10 +20,10 @@ public class User {
     @Column(name = "IdUser")
     private Long idUser;
 
-    @Column(name = "Email",unique = true, nullable = false)
+    @Column(name = "Email",unique = false, nullable = false)
     private String email;
 
-    @Column(name = "NoHp",unique = true, nullable = false)
+    @Column(name = "NoHp",unique = false, nullable = false)
     private String noHp;
 
     @Column(name = "Username",unique = true, nullable = false)
@@ -27,8 +35,9 @@ public class User {
     @Column(name = "NamaLengkap", nullable = false)
     private String namaLengkap;
 
+
     @Column(name = "TanggalLahir", nullable = false)
-    private LocalDate tanggalLahir;
+    private Date tanggalLahir = new Date();;
 
     @Column(name = "Alamat", nullable = false)
     private String alamat;
@@ -39,8 +48,36 @@ public class User {
     @Column(name = "Token")
     private String token;
 
+    @Column(name = "Otp")  // New field for OTP
+    private Integer otp;
+
+    public Integer getOtp() {
+        return otp;
+    }
+
+    public void setOtp(Integer otp) {
+        this.otp = otp;
+    }
+
     @Column(name = "IsRegistered")
     private Boolean isRegistered;
+
+    @Column(name = "LastOtpSentTime")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date lastOtpSentTime;
+
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_roles",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "IdUser"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
+    )
+    private Set<Role> roles = new HashSet<>();
+
+
+
+
 
     /**
      Start Group Audit trails
@@ -57,7 +94,7 @@ public class User {
     @Column(name = "ModifiedDate")
     private Date modifiedDate;
 
-    public User(Long idUser, String email, String noHp, String username, String password, String namaLengkap, LocalDate tanggalLahir, String alamat, Integer umur, String token, Boolean isRegistered, Long createdBy, Date createdDate, Long modifiedBy, Date modifiedDate) {
+    public User(Long idUser, String email, String noHp, String username, String password, String namaLengkap, Date tanggalLahir, String alamat, Integer umur, String token, Boolean isRegistered, Long createdBy, Date createdDate, Long modifiedBy, Date modifiedDate) {
         this.idUser = idUser;
         this.email = email;
         this.noHp = noHp;
@@ -126,11 +163,11 @@ public class User {
         this.namaLengkap = namaLengkap;
     }
 
-    public LocalDate getTanggalLahir() {
+    public Date getTanggalLahir() {
         return tanggalLahir;
     }
 
-    public void setTanggalLahir(LocalDate tanggalLahir) {
+    public void setTanggalLahir(Date tanggalLahir) {
         this.tanggalLahir = tanggalLahir;
     }
 
@@ -196,6 +233,24 @@ public class User {
 
     public void setModifiedDate(Date modifiedDate) {
         this.modifiedDate = modifiedDate;
+    }
+
+
+    public Collection<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+
+    public Date getLastOtpSentTime() {
+        return lastOtpSentTime;
+    }
+
+    public void setLastOtpSentTime(Date lastOtpSentTime) {
+        this.lastOtpSentTime = lastOtpSentTime;
     }
 }
 

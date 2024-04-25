@@ -2,6 +2,7 @@ package coid.bcafinance.mgaspringfinalexam.controller;
 
 import coid.bcafinance.mgaspringfinalexam.dto.LoginDTO;
 import coid.bcafinance.mgaspringfinalexam.dto.OtpDto;
+import coid.bcafinance.mgaspringfinalexam.dto.OtpVerificationRequestDTO;
 import coid.bcafinance.mgaspringfinalexam.dto.RegisterDTO;
 import coid.bcafinance.mgaspringfinalexam.model.User;
 import coid.bcafinance.mgaspringfinalexam.service.UserService;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
+import java.util.Map;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
@@ -26,9 +28,11 @@ public class AuthController {
     private ModelMapper modelMapper;
 
     BindingResult bindingResult;
+
+
+    @RequestMapping("/v1/regis")
     @CrossOrigin(origins = "http://localhost:4200")
-    @PostMapping("/v1/regis")
-    public ResponseEntity<Object> doRegis(@Valid @RequestBody RegisterDTO regisDTO, HttpServletRequest request) {
+    public ResponseEntity<Object> doRegis(@RequestBody RegisterDTO regisDTO, HttpServletRequest request) {
         User user = modelMapper.map(regisDTO, new TypeToken<User>() {}.getType());
 
         return userService.checkRegis(user,request);
@@ -41,11 +45,18 @@ public class AuthController {
     }
     @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("/otp/v1")
-    public ResponseEntity<Object> otp(@Valid @RequestBody OtpDto otpDto, @RequestHeader("Authorization") String authorizationHeader, HttpServletRequest request) {
-        User user = modelMapper.map(otpDto, new TypeToken<User>() {}.getType());
+    public ResponseEntity<Object> otp(@RequestBody OtpVerificationRequestDTO otpData, HttpServletRequest request) {
 
-        return userService.verifyOtp(user, authorizationHeader, request);
+        return userService.verifyOtp(otpData, request);
     }
+
+    @CrossOrigin(origins = "http://localhost:4200")@PostMapping("/otp/resend")
+    public ResponseEntity<Object> resendOtp(@RequestBody Map<String, String> body, HttpServletRequest request) {
+        String username = body.get("username");
+        return userService.resendOtp(username, request);
+    }
+
+
 
 //    @ExceptionHandler(MethodArgumentNotValidException.class)
 //    @ResponseBody

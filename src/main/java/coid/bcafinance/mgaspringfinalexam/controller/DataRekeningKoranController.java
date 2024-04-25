@@ -36,9 +36,8 @@ import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+
 
 @Controller
 @RequestMapping("/RekeningKoran")
@@ -156,8 +155,6 @@ public class DataRekeningKoranController {
     }
 
 
-
-
 //
 //            // Prepare JSON data to send to Django
 
@@ -188,13 +185,11 @@ public class DataRekeningKoranController {
 //            }
 
 
-
 //            return new ResponseEntity<>("CSV file uploaded successfully", HttpStatus.OK);
 //        } catch (Exception e) {
 //            return new ResponseEntity<>("Failed to upload CSV file: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 //        }
 //    }
-
 
 
     @PostMapping("/{rekeningKoranId}")
@@ -237,11 +232,179 @@ public class DataRekeningKoranController {
     }
 
 
-
-    @DeleteMapping("/{rekeningKoranId}/{dataRekeningKoranId}")
+    @DeleteMapping("/{rekeningKoranId}/delete/{dataRekeningKoranId}")
     public ResponseEntity<HttpStatus> deleteDataRekeningKoran(@PathVariable("rekeningKoranId") Long rekeningKoranId, @PathVariable("dataRekeningKoranId") Long dataRekeningKoranId) {
-        // Delete DataRekeningKoran with the given ID and associated with the given RekeningKoran ID
-        // Your implementation here
-        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        try {
+            // Check if the provided IDs exist
+            Optional<RekeningKoran> rekeningKoranOptional = dataRekeningKoranService.getRekeningKoranById(rekeningKoranId);
+            Optional<DataRekeningKoran> dataRekeningKoranOptional = dataRekeningKoranService.getDataRekeningKoranById(dataRekeningKoranId);
+
+            if (rekeningKoranOptional.isPresent() && dataRekeningKoranOptional.isPresent()) {
+                // If both IDs exist, proceed with deletion
+                dataRekeningKoranService.deleteDataRekeningKoran(dataRekeningKoranId);
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            } else {
+                // If either ID does not exist, return 404 Not Found
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
+        } catch (Exception e) {
+            // If an error occurs during deletion, return 500 Internal Server Error
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
+
+
+    @PutMapping("/{rekeningKoranId}/edit/{dataRekeningKoranId}")
+    public ResponseEntity<DataRekeningKoran> updateDataRekeningKoran(@PathVariable("rekeningKoranId") Long rekeningKoranId, @PathVariable("dataRekeningKoranId") Long dataRekeningKoranId, @Valid @RequestBody DataRekeningKoran updatedDataRekeningKoran) throws JsonProcessingException {
+        // Check if the provided rekeningKoranId and dataRekeningKoranId exist
+        Optional<RekeningKoran> rekeningKoranOptional = dataRekeningKoranService.getRekeningKoranById(rekeningKoranId);
+        Optional<DataRekeningKoran> dataRekeningKoranOptional = dataRekeningKoranService.getDataRekeningKoranById(dataRekeningKoranId);
+
+        if (rekeningKoranOptional.isPresent() && dataRekeningKoranOptional.isPresent()) {
+            //initiate mapper and rest
+            ObjectMapper objectMapper = new ObjectMapper();
+            RestTemplate restTemplate = new RestTemplate();
+
+            // Get the existing DataRekeningKoran from the database
+            DataRekeningKoran existingDataRekeningKoran = dataRekeningKoranOptional.get();
+
+            // Update the fields of existingDataRekeningKoran with the fields from updatedDataRekeningKoran
+            existingDataRekeningKoran.setDeskripsi(updatedDataRekeningKoran.getDeskripsi());
+            existingDataRekeningKoran.setNominal(updatedDataRekeningKoran.getNominal());
+            // Update other fields similarly...
+
+            // Serialize updatedDataRekeningKoran to JSON
+            String jsonData = objectMapper.writeValueAsString(updatedDataRekeningKoran);
+
+            // Prepare headers and request entity
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+            HttpEntity<String> requestEntity = new HttpEntity<>(jsonData, headers);
+
+            // Send POST request to Django for prediction
+            ResponseEntity<String> responseEntity = restTemplate.postForEntity("http://127.0.0.1:8000/predict_single_data", requestEntity, String.class);
+            String predictedLabel = responseEntity.getBody();
+
+            // Deserialize predicted label JSON array
+            JsonNode jsonNode = objectMapper.readTree(predictedLabel);
+            String[] predictedLabels = objectMapper.convertValue(jsonNode.get("predicted_labels"), String[].class);
+
+            String verifikasi = predictedLabels[0];
+
+            // Update the 'verifikasi' field of existingDataRekeningKoran
+            existingDataRekeningKoran.setVerifikasi(verifikasi);
+
+            // Save the updated DataRekeningKoran
+            DataRekeningKoran updatedDataRekeningKoranEntity = dataRekeningKoranService.saveOrUpdateDataRekeningKoran(existingDataRekeningKoran);
+
+            // Return the updated DataRekeningKoran entity in the response
+            return new ResponseEntity<>(updatedDataRekeningKoranEntity, HttpStatus.OK);
+        } else {
+            // If the rekeningKoranId or dataRekeningKoranId is not found, return 404 Not Found status
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PutMapping("/{rekeningKoranId}/editVerifikasi/{dataRekeningKoranId}")
+    public ResponseEntity<DataRekeningKoran> updateVerifikasi(
+            @PathVariable Long rekeningKoranId,
+            @PathVariable Long dataRekeningKoranId,
+            @RequestBody Map<String, String> requestBody) {
+
+        try {
+            // Fetch the existing DataRekenicleangKoran entity from the service layer
+            DataRekeningKoran existingDataRekeningKoran = dataRekeningKoranService.getDataRekeningKoranById(dataRekeningKoranId)
+                    .orElseThrow(() -> new NoSuchElementException());
+
+            // Update the "verifikasi" field with the value from the request body
+            String verifikasi = requestBody.get("verifikasi");
+            existingDataRekeningKoran.setVerifikasi(verifikasi);
+
+            // Save the updated entity back to the database through the service layer
+            DataRekeningKoran updatedEntity = dataRekeningKoranService.saveOrUpdateDataRekeningKoran(existingDataRekeningKoran);
+            
+
+            // Return response with updated entity
+            return ResponseEntity.ok(updatedEntity);
+        } catch (NoSuchElementException e) {
+            // Let the global exception handler handle the exception
+            throw e;
+        }
+    }
+
+    @PutMapping("/{rekeningKoranId}/editChecker1/{dataRekeningKoranId}")
+    public ResponseEntity<DataRekeningKoran> updateChecker1(
+            @PathVariable Long rekeningKoranId,
+            @PathVariable Long dataRekeningKoranId,
+            @RequestBody Map<String, Boolean> requestBody) {
+
+        try {
+            // Fetch the existing DataRekeningKoran entity from the service layer
+            DataRekeningKoran existingDataRekeningKoran = dataRekeningKoranService.getDataRekeningKoranById(dataRekeningKoranId)
+                    .orElseThrow(() -> new NoSuchElementException());
+
+            // Update the "checker1" field with the value from the request body
+            Boolean checker1Value = requestBody.get("checker1");
+            if (checker1Value != null) {
+                existingDataRekeningKoran.setChecker1(checker1Value);
+            } else {
+                // Handle the case where "checker1" is not present in the request body
+                // You may throw an exception, return an error response, or handle it as per your requirements
+                // For now, let's assume setting checker1 to false if not provided
+                existingDataRekeningKoran.setChecker1(false);
+            }
+
+            // Save the updated entity back to the database through the service layer
+            DataRekeningKoran updatedEntity = dataRekeningKoranService.saveOrUpdateDataRekeningKoran(existingDataRekeningKoran);
+
+            // Return response with updated entity
+            return ResponseEntity.ok(updatedEntity);
+        } catch (NoSuchElementException e) {
+            // Let the global exception handler handle the exception
+            throw e;
+        }
+    }
+
+
+    @PutMapping("/{rekeningKoranId}/editChecker2/{dataRekeningKoranId}")
+    public ResponseEntity<DataRekeningKoran> updateChecker2(
+            @PathVariable Long rekeningKoranId,
+            @PathVariable Long dataRekeningKoranId,
+            @RequestBody Map<String, Boolean> requestBody) {
+
+        try {
+            // Fetch the existing DataRekeningKoran entity from the service layer
+            DataRekeningKoran existingDataRekeningKoran = dataRekeningKoranService.getDataRekeningKoranById(dataRekeningKoranId)
+                    .orElseThrow(() -> new NoSuchElementException());
+
+            // Update the "checker2" field with the value from the request body
+            Boolean checker2Value = requestBody.get("checker2");
+            if (checker2Value != null) {
+                existingDataRekeningKoran.setChecker2(checker2Value);
+            } else {
+                // Handle the case where "checker2" is not present in the request body
+                // You may throw an exception, return an error response, or handle it as per your requirements
+                // For now, let's assume setting checker2 to false if not provided
+                existingDataRekeningKoran.setChecker2(false);
+            }
+
+            // Save the updated entity back to the database through the service layer
+            DataRekeningKoran updatedEntity = dataRekeningKoranService.saveOrUpdateDataRekeningKoran(existingDataRekeningKoran);
+
+            // Return response with updated entity
+            return ResponseEntity.ok(updatedEntity);
+        } catch (NoSuchElementException e) {
+            // Let the global exception handler handle the exception
+            throw e;
+        }
+    }
+
+
+
+
+
+
 }
+
+
+

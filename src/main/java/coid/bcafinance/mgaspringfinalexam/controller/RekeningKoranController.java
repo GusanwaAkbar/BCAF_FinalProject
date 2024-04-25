@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +26,7 @@ public class RekeningKoranController {
     @Autowired
     private RekeningKoranService rekeningKoranService;
 
+    @PreAuthorize("hasAuthority('ADMIN_ROLE')")
     @GetMapping("/")
     public ResponseEntity<Page<RekeningKoran>> getAllRekeningKorans(Pageable pageable) {
         Page<RekeningKoran> rekeningKorans = rekeningKoranService.getAllRekeningKorans(pageable);
@@ -39,7 +41,7 @@ public class RekeningKoranController {
 
     @PostMapping("/")
     public ResponseEntity<RekeningKoran> createRekeningKoran(@Valid @RequestBody RekeningKoran rekeningKoran) {
-        RekeningKoran createdRekeningKoran = rekeningKoranService.saveOrUpdateRekeningKoran(rekeningKoran);
+        RekeningKoran createdRekeningKoran = rekeningKoranService.saveRekeningKoran(rekeningKoran);
         return new ResponseEntity<>(createdRekeningKoran, HttpStatus.CREATED);
     }
 
@@ -48,7 +50,7 @@ public class RekeningKoranController {
         Optional<RekeningKoran> existingRekeningKoran = rekeningKoranService.getRekeningKoranById(id);
         if (existingRekeningKoran.isPresent()) {
             rekeningKoran.setId(id);
-            RekeningKoran updatedRekeningKoran = rekeningKoranService.saveOrUpdateRekeningKoran(rekeningKoran);
+            RekeningKoran updatedRekeningKoran = rekeningKoranService.updateRekeningKoran(rekeningKoran);
             return new ResponseEntity<>(updatedRekeningKoran, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
