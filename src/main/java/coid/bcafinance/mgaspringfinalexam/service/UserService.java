@@ -1,15 +1,18 @@
 package coid.bcafinance.mgaspringfinalexam.service;
 
+import coid.bcafinance.mgaspringfinalexam.configuration.OtherConfig;
 import coid.bcafinance.mgaspringfinalexam.core.BcryptImpl;
 import coid.bcafinance.mgaspringfinalexam.core.Crypto;
 import coid.bcafinance.mgaspringfinalexam.core.IService;
 import coid.bcafinance.mgaspringfinalexam.core.security.JwtUtility;
 import coid.bcafinance.mgaspringfinalexam.dto.OtpVerificationRequestDTO;
+import coid.bcafinance.mgaspringfinalexam.handler.RequestCapture;
 import coid.bcafinance.mgaspringfinalexam.handler.ResponseHandler;
 import coid.bcafinance.mgaspringfinalexam.model.User;
 import coid.bcafinance.mgaspringfinalexam.repo.RoleRepository;
 import coid.bcafinance.mgaspringfinalexam.repo.UserRepo;
 import coid.bcafinance.mgaspringfinalexam.util.ExecuteSMTP;
+import coid.bcafinance.mgaspringfinalexam.util.LoggingFile;
 import io.jsonwebtoken.ExpiredJwtException;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -86,128 +89,9 @@ public class UserService implements IService<User>, UserDetailsService {
         return null;
     }
 
-    /*flow untuk registrasi STEP 1*/
-//    public ResponseEntity<Object> checkRegis(User user, HttpServletRequest request) {//RANGE RGS 001-010
-//
-//        if(user==null) {
-//            return new ResponseHandler().generateResponse(
-//                    "Data tidak Valid",//message
-//                    HttpStatus.BAD_REQUEST,//httpstatus
-//                    null,//object
-//                    "FVRGS001",//errorCode Fail Validation modul-code RGS sequence 001 range 001 - 010
-//                    request
-//            );
-//        }
-//
-//        int intVerification = new Random().nextInt(100000,999999);//TOKEN YANG AKAN DIKIRIM KE EMAIL
-//        Optional<User> opUserResult = userRepo.findTop1ByUsernameOrNoHpOrEmail(user.getUsername(),user.getNoHp(),user.getEmail());//INI VALIDASI USER IS EXISTS
-////        User nextUser1 = opUserResult.get();
-////        System.out.println(opUserResult.isEmpty());
-//        try {
-//            //kondisi mengecek apakah user sudah terdaftar artinya user baru atau sudah ada
-//            if(!opUserResult.isEmpty()) {
-//                User nextUser = opUserResult.get();
-//
-//                //sudah terdaftar dan sudah aktif
-////                System.out.println(nextUser.getRegistered());
-//                if(nextUser.getRegistered().equals(false) || nextUser.getRegistered().equals(true)) {
-//                    //NOTIFIKASI SAAT REGISTRASI BAGIAN MANA YANG SUDAH TERDAFTAR (USERNAME, EMAIL ATAU NOHP)
-//                    //kasus nya bisa saja user ingin memiliki 2 akun , namun dari sistem tidak memperbolehkan untuk duplikasi username,email atau no hp
-//                    //jika user ingin memiliki 2 akun , maka dia harus menggunakan username,email dan nohp yang berbeda dan belum terdaftar di sistem
-//                    /*
-//                        ex : username : paul, noHP : 628888888, email:paul@gmail.com lalu ingin mendaftar lagi dengan format
-//                        username : paul123, noHP : 6283333333, email:paul@gmail.com ,di kasus ini user harus menggunakan email lain walau username dan noHp sudah yang baru
-//                     */
-//                    if (nextUser.getUsername().equals(user.getUsername())) {
-//                        return new ResponseHandler().generateResponse("USERNAME SUDAH TERDAFTAR",
-//                                HttpStatus.NOT_ACCEPTABLE,null,"FVRGS004",request);//USERNAME SUDAH TERDAFTAR DAN AKTIF
-//                    } else if(nextUser.getEmail().equals(user.getEmail())) {
-//                        return new ResponseHandler().generateResponse("EMAIL SUDAH TERDAFTAR !!",
-//                                HttpStatus.NOT_ACCEPTABLE,null,"FVRGS002",request);//EMAIL SUDAH TERDAFTAR DAN AKTIF
-//                    } else if (nextUser.getNoHp().equals(user.getNoHp())) {//FV = FAILED VALIDATION
-//                        return new ResponseHandler().generateResponse("NOMOR HP SUDAH TERDAFTAR !!",
-//                                HttpStatus.NOT_ACCEPTABLE,null,"FVRGS003",request);//NO HP SUDAH TERDAFTAR DAN AKTIF
-//                    } else {
-//                        /*
-//                            seharusnya tidak akan pernah masuk kesini karena dari query hanya 3 saja autentikasi nya yaitu :
-//                            username , email dan no HP
-//                         */
-//                        return new ResponseHandler().generateResponse("SEMUA BISA TERJADI BRO !!",
-//                                HttpStatus.NOT_ACCEPTABLE,null,"FVRGS005",request);//KARENA YANG DIAMBIL DATA YANG PERTAMA JADI ANGGAPAN NYA SUDAH TERDAFTAR SAJA
-//                    }
-//                } else {
-//                    /*
-//                        masuk kesini jika user sudah pernah melakukan registrasi (data sudah tersimpan ke tabel) namun tidak melanjutkan sampai selesai
-//                        flag isRegistered = 0
-//                     */
-//                    nextUser.setPassword(BcryptImpl.hash(user.getPassword()+user.getUsername()));//ini trick nya agar tidak bisa di hash manual melalui database
-//                    nextUser.setToken(BcryptImpl.hash(String.valueOf(intVerification)));
-//                    nextUser.setRegistered(false);
-//                    nextUser.setModifiedBy(nextUser.getIdUser());
-//                    nextUser.setModifiedDate(new Date());
-//
-//
-//
-//                    Role defaultRole = roleRepository.findByName("ROLE_USER");
-//                    Set<Role> roles = new HashSet<>();
-//                    roles.add(defaultRole);
-//                    user.setRoles(roles);
-//
-//                }
-//            } else {//user belum terdaftar sama sekali artinya user benar-benar baru menndaftar
-//                user.setPassword(BcryptImpl.hash(user.getPassword()+user.getUsername()));
-//                user.setToken(BcryptImpl.hash(String.valueOf(intVerification)));
-//                user.setRegistered(false);
-////                user.setPost(new Post(1L));
-//                userRepo.save(user);
-//            }
-//
-//            String[] strVerify = new String[3];
-//            strVerify[0] = "Verifikasi Email";
-//            strVerify[1] = user.getNamaLengkap();
-//            strVerify[2] = String.valueOf(intVerification);
-//
-//            /**
-//                method untuk kirim email
-//             */
-//            Thread first = new Thread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    new ExecuteSMTP().
-//                            sendSMTPToken(
-//                                    user.getEmail(),// email tujuan
-//                                    "TOKEN Verifikasi Email",// judul email
-//                                    strVerify,//
-//                            "ver_regis.html");// \\data\\ver_regis
-//                    System.out.println("Email Terkirim");
-//                }
-//            });
-//            first.start();
-//        } catch (Exception e) {
-////            strExceptionArr[1] = "checkRegis(User user, HttpServletRequest request)  --- LINE 130 \n ALL - REQUEST"+ RequestCapture.allRequest(request);
-////            LoggingFile.exceptionStringz(strExceptionArr, e, OtherConfig.getFlagLoging());
-////            LogTable.inputLogRequest(strExceptionArr,e, OtherConfig.getFlagLogTable());
-//            return new ResponseHandler().generateResponse("GAGAL DIPROSES",HttpStatus.INTERNAL_SERVER_ERROR,null,"FERGS001",request);
-//        }
-//
-//        Map<String,Object> map = new HashMap<String,Object>();
-//        map.put("token",authManager(user,request));
-//        return new ResponseHandler().generateResponse("TOKEN TERKIRIM",
-//                HttpStatus.CREATED,map,null,request);
-//    }
-
-
-
-
-
-
-
-
-
-
-
-
     public ResponseEntity<Object> checkRegis(@RequestBody User user, HttpServletRequest request) {
+    try{
+
         if (user == null) {
             return new ResponseHandler().generateResponse(
                     "Data tidak Valid",
@@ -232,14 +116,26 @@ public class UserService implements IService<User>, UserDetailsService {
         }
 
         return sendOtp(user, request);
+
+        } catch (Exception e) {
+        logException("checkRegis", e, request);
+            return new ResponseHandler().generateResponse("Registration error", HttpStatus.INTERNAL_SERVER_ERROR, null, null, request);
+        }
+
     }
 
     private ResponseEntity<Object> checkExistingUser(User existingUser, User newUser, HttpServletRequest request) {
-        if (existingUser.getUsername().equals(newUser.getUsername())) {
-            return new ResponseHandler().generateResponse("USERNAME SUDAH TERDAFTAR", HttpStatus.NOT_ACCEPTABLE, null, "FVRGS004", request);
+        try {
+            if (existingUser.getUsername().equals(newUser.getUsername())) {
+                return new ResponseHandler().generateResponse("USERNAME SUDAH TERDAFTAR", HttpStatus.NOT_ACCEPTABLE, null, "FVRGS004", request);
+            }
+            // This block should not be reachable if your DB constraints are set correctly; consider removing it.
+            return new ResponseHandler().generateResponse("Unhandled registration case", HttpStatus.CONFLICT, null, "FVRGS005", request);
+            // Rest of your existing method code...
+        } catch (Exception e) {
+            logException("checkExistingUser", e, request);
+            return new ResponseHandler().generateResponse("Registration error", HttpStatus.INTERNAL_SERVER_ERROR, null, null, request);
         }
-        // This block should not be reachable if your DB constraints are set correctly; consider removing it.
-        return new ResponseHandler().generateResponse("Unhandled registration case", HttpStatus.CONFLICT, null, "FVRGS005", request);
     }
 
     private void updateUserInfo(User existingUser, User newUser) {
@@ -266,6 +162,7 @@ public class UserService implements IService<User>, UserDetailsService {
             userRepo.save(user);
             return new ResponseHandler().generateResponse("OTP sent successfully", HttpStatus.OK, user, null, request);
         } else {
+
             return new ResponseHandler().generateResponse("Please wait before requesting another OTP", HttpStatus.TOO_MANY_REQUESTS, null, null, request);
         }
     }
@@ -445,5 +342,13 @@ public class UserService implements IService<User>, UserDetailsService {
                 .map(role -> new SimpleGrantedAuthority(role.getName()))
                 .collect(Collectors.toSet());
     }
+
+    private void logException(String methodName, Exception e, HttpServletRequest request) {
+        String[] strExceptionArr = new String[2];
+        strExceptionArr[0] = "Error in " + methodName + " at " + new Date();
+        strExceptionArr[1] = methodName + "(...) LINE " + new Throwable().getStackTrace()[0].getLineNumber() + " " + RequestCapture.allRequest(request);
+        LoggingFile.exceptionStringz(strExceptionArr, e, OtherConfig.getFlagLoging());
+    }
+
 }
 

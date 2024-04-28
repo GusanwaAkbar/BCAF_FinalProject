@@ -1,5 +1,5 @@
-package coid.bcafinance.mgaspringfinalexam.service;// RekeningKoranService.java
-
+package coid.bcafinance.mgaspringfinalexam.ServiceV2;
+import coid.bcafinance.mgaspringfinalexam.RepositoryV2.RekeningKoranRepositoryV2;
 import coid.bcafinance.mgaspringfinalexam.model.RekeningKoran;
 import coid.bcafinance.mgaspringfinalexam.model.User;
 import coid.bcafinance.mgaspringfinalexam.repo.RekeningKoranRepository;
@@ -7,6 +7,7 @@ import coid.bcafinance.mgaspringfinalexam.repo.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
@@ -16,7 +17,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 @Service
-public class RekeningKoranService {
+public class RekeningKoranServiceV2 {
 
 
 
@@ -24,20 +25,16 @@ public class RekeningKoranService {
     private RekeningKoranRepository rekeningKoranRepository;
 
     @Autowired
+    private RekeningKoranRepositoryV2 rekeningKoranRepositoryV2;
+
+    @Autowired
     private UserRepo userRepository;
 
 
     public Page<RekeningKoran> getAllRekeningKorans(String namaRekeningKoran, Pageable pageable) {
-        if (namaRekeningKoran != null && !namaRekeningKoran.trim().isEmpty()) {
-            // Method that applies filtering
-            return rekeningKoranRepository.findByNamaRekeningKoranContaining(namaRekeningKoran, pageable);
-        } else {
-            // Method that retrieves all records
-            return rekeningKoranRepository.findAll(pageable);
-        }
+        Specification<RekeningKoran> spec = Specification.where(RekeningKoranSpecifications.hasNamaRekeningKoran(namaRekeningKoran));
+        return rekeningKoranRepositoryV2.findAll(spec, pageable);
     }
-
-
 
     public Optional<RekeningKoran> getRekeningKoranById(Long id) {
         return rekeningKoranRepository.findById(id);
@@ -106,4 +103,8 @@ public class RekeningKoranService {
     public void deleteRekeningKoran(Long id) {
         rekeningKoranRepository.deleteById(id);
     }
+
+
 }
+
+

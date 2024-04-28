@@ -31,4 +31,24 @@ public class ResponseHandler {
         }
         return new ResponseEntity<Object>(map,status);
     }
+
+    public ResponseEntity<Object> generateResponse(String message,
+                                                   HttpStatus status,
+                                                   Object responseObj,
+                                                   Object errorCode) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("message", message);
+        map.put("status", status.value());
+        map.put("data", responseObj == null ? "" : responseObj);
+        map.put("timestamp", new Date());
+        map.put("success", !status.isError());
+        if (errorCode != null) {
+            map.put("errorCode", errorCode);
+            // path is not included because there's no request object
+        }
+        return new ResponseEntity<>(map, status);
+    }
+
+
 }
+

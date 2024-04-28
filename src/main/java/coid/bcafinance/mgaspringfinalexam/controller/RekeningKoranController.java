@@ -2,11 +2,14 @@ package coid.bcafinance.mgaspringfinalexam.controller;
 
 
 
+import coid.bcafinance.mgaspringfinalexam.ServiceV2.RekeningKoranServiceV2;
 import coid.bcafinance.mgaspringfinalexam.model.RekeningKoran;
 import coid.bcafinance.mgaspringfinalexam.service.RekeningKoranService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -18,7 +21,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import java.util.Optional;
 
-@Controller
+@RestController
 @RequestMapping("/rekening-koran")
 @Validated
 public class RekeningKoranController {
@@ -26,12 +29,25 @@ public class RekeningKoranController {
     @Autowired
     private RekeningKoranService rekeningKoranService;
 
-    @PreAuthorize("hasAuthority('ADMIN_ROLE')")
+    @Autowired
+    private RekeningKoranServiceV2 rekeningKoranServiceV2;
+
+
     @GetMapping("/")
-    public ResponseEntity<Page<RekeningKoran>> getAllRekeningKorans(Pageable pageable) {
-        Page<RekeningKoran> rekeningKorans = rekeningKoranService.getAllRekeningKorans(pageable);
-        return new ResponseEntity<>(rekeningKorans, HttpStatus.OK);
+    public Page<RekeningKoran> getAllRekeningKorans(
+            @RequestParam(required = false) String namaRekeningKoran,
+            @PageableDefault(size = 5, sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
+
+        return rekeningKoranService.getAllRekeningKorans(namaRekeningKoran, pageable);
     }
+
+
+
+//    @GetMapping("/")
+//    public Page<RekeningKoran> getAllRekeningKorans(@RequestParam(required = false) String namaRekeningKoran,
+//                                                    @PageableDefault(size = 10, sort = "namaRekeningKoran", direction = Sort.Direction.ASC) Pageable pageable) {
+//        return rekeningKoranServiceV2.getAllRekeningKorans(namaRekeningKoran, pageable);
+//    }
 
     @GetMapping("/{id}")
     public ResponseEntity<RekeningKoran> getRekeningKoranById(@PathVariable @Min(1) Long id) {
@@ -66,4 +82,7 @@ public class RekeningKoranController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+
+
 }
