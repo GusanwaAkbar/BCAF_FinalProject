@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  finalproject-image:
+    container_name: mgaspringfinalexam-image
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+
+
+      HOST: host.docker.internal
+      PORT: 1433
+      DB_NAME: "ujian2"
+      DB_UNAME: sa
+      DB_PWD: ee607d38a76a00a8099e79148b495ac1
+      SHOW_SQL: "true"
+      DDL_AUTO: update
+      SCHEMA: dbo
+      SVR_PORT: 8080
+
+# How to start:
+# docker-compose up --build
+
+# change TAG:
+# docker tag finalproject-finalproject-image baru777/finalproject:1.0

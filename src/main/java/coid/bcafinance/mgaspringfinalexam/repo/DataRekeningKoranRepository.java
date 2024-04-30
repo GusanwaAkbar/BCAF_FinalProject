@@ -15,5 +15,7 @@ public interface DataRekeningKoranRepository extends JpaRepository<DataRekeningK
     List<DataRekeningKoran> findByRekeningKoranId(Long rekeningKoranId);
     Page<DataRekeningKoran> findByRekeningKoranId(Long rekeningKoranId, Pageable pageable);
 
+
+
 }
 

@@ -91,31 +91,32 @@ public class UserService implements IService<User>, UserDetailsService {
 
     public ResponseEntity<Object> checkRegis(@RequestBody User user, HttpServletRequest request) {
     try{
-
-        if (user == null) {
-            return new ResponseHandler().generateResponse(
-                    "Data tidak Valid",
-                    HttpStatus.BAD_REQUEST,
-                    user,
-                    "FVRGS001",
-                    request
-            );
-        }
-
-        Optional<User> opUserResult = userRepo.findTop1ByUsernameOrNoHpOrEmail(user.getUsername(), user.getNoHp(), user.getEmail());
-        if (!opUserResult.isEmpty()) {
-            User existingUser = opUserResult.get();
-
-            if (existingUser.getRegistered() != null && existingUser.getRegistered()) {
-                return checkExistingUser(existingUser, user, request);
-            } else {
-                updateUserInfo(existingUser, user);
+            if (user == null) {
+                return new ResponseHandler().generateResponse(
+                        "Data tidak Valid",
+                        HttpStatus.BAD_REQUEST,
+                        user,
+                        "FVRGS001",
+                        request
+                );
             }
-        } else {
-            createUser(user);
-        }
 
-        return sendOtp(user, request);
+            Optional<User> opUserResult = userRepo.findTop1ByUsernameOrNoHpOrEmail(user.getUsername(), user.getNoHp(), user.getEmail());
+            if (!opUserResult.isEmpty()) {
+                User existingUser = opUserResult.get();
+
+                if (existingUser.getRegistered() != null && existingUser.getRegistered()) {
+                    return checkExistingUser(existingUser, user, request);
+                } else {
+                    updateUserInfo(existingUser, user);
+                }
+
+
+            } else {
+                createUser(user);
+            }
+
+            return sendOtp(user, request);
 
         } catch (Exception e) {
         logException("checkRegis", e, request);
@@ -153,7 +154,11 @@ public class UserService implements IService<User>, UserDetailsService {
     }
 
     private ResponseEntity<Object> sendOtp(User user, HttpServletRequest request) {
-        if (canSendOtp(Optional.ofNullable(user))) {
+        try {
+            if (!canSendOtp(Optional.ofNullable(user))) {
+                return new ResponseHandler().generateResponse("Please wait before requesting another OTP", HttpStatus.TOO_MANY_REQUESTS, null, null, request);
+            }
+
             int otp = new Random().nextInt(100000, 999999);
             String[] message = {"Verifikasi Email", user.getNamaLengkap(), String.valueOf(otp)};
             new Thread(() -> new ExecuteSMTP().sendSMTPToken(user.getEmail(), "TOKEN Verifikasi Email", message, "ver_regis.html")).start();
@@ -161,19 +166,16 @@ public class UserService implements IService<User>, UserDetailsService {
             user.setLastOtpSentTime(new Date());
             userRepo.save(user);
             return new ResponseHandler().generateResponse("OTP sent successfully", HttpStatus.OK, user, null, request);
-        } else {
 
-            return new ResponseHandler().generateResponse("Please wait before requesting another OTP", HttpStatus.TOO_MANY_REQUESTS, null, null, request);
+        } catch (Exception e) {
+            // Log the exception details and request specifics for debugging purposes
+            logException("sendOtp", e, request);
+            // Return a generic error response to avoid exposing sensitive error details
+            return new ResponseHandler().generateResponse("Error sending OTP", HttpStatus.INTERNAL_SERVER_ERROR, null, null, request);
         }
     }
 
-    private boolean canSendOtp(Optional<User> user) {
-        if (user.get().getLastOtpSentTime() != null) {
-            long elapsed = new Date().getTime() - user.get().getLastOtpSentTime().getTime();
-            return elapsed >= 10000; // 10 seconds cooldown
-        }
-        return true;
-    }
+
 
 
 
@@ -227,6 +229,7 @@ public class UserService implements IService<User>, UserDetailsService {
 //            strExceptionArr[1]="doLogin(Userz userz,WebRequest request)  --- LINE 132";
 //            LoggingFile.exceptionStringz(strExceptionArr,e, OtherConfig.getFlagLoging());
             System.out.println(e);
+            logException("doLogin", e, request);
             return new ResponseHandler().generateResponse("GAGAL DIPROSES",HttpStatus.INTERNAL_SERVER_ERROR,nextUser,"FERGS001",request);
         }
 
@@ -283,37 +286,53 @@ public class UserService implements IService<User>, UserDetailsService {
 
     public ResponseEntity<Object> verifyOtp(OtpVerificationRequestDTO otpData, HttpServletRequest request) {
 
-        Optional<User> user = userRepo.findByUsername(otpData.getUsername());
+        try {
+            Optional<User> user = userRepo.findByUsername(otpData.getUsername());
 
-        if (user == null || user.get().getUsername() == null || user.get().getOtp() == null) {
-            return new ResponseHandler().generateResponse("Invalid request", HttpStatus.BAD_REQUEST, user, "MISSING_USERNAME_OR_OTP", request);
+            if (user == null || user.get().getUsername() == null || user.get().getOtp() == null) {
+                return new ResponseHandler().generateResponse("Invalid request", HttpStatus.BAD_REQUEST, user, "MISSING_USERNAME_OR_OTP", request);
+            }
+
+            User existingUser = userRepo.findByUsername(user.get().getUsername())
+                    .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+
+            if (existingUser.getOtp().equals(user.get().getOtp())) {
+                existingUser.setRegistered(true);
+                existingUser.setOtp(null); // Clear the OTP as it's no longer needed
+                userRepo.save(existingUser);
+                return new ResponseHandler().generateResponse("OTP verified successfully", HttpStatus.OK, user, null, request);
+            } else {
+                return new ResponseHandler().generateResponse("Invalid OTP", HttpStatus.UNAUTHORIZED, user, "INVALID_OTP", request);
+            }
+        } catch (Exception e){
+
+            logException("verifyOtp", e, request);
+            return new ResponseHandler().generateResponse("GAGAL VERIFY OTP",HttpStatus.INTERNAL_SERVER_ERROR,otpData,"FERGS001",request);
+
         }
 
-        User existingUser = userRepo.findByUsername(user.get().getUsername())
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
-
-        if (existingUser.getOtp().equals(user.get().getOtp())) {
-            existingUser.setRegistered(true);
-            existingUser.setOtp(null); // Clear the OTP as it's no longer needed
-            userRepo.save(existingUser);
-            return new ResponseHandler().generateResponse("OTP verified successfully", HttpStatus.OK, user, null, request);
-        } else {
-            return new ResponseHandler().generateResponse("Invalid OTP", HttpStatus.UNAUTHORIZED, user, "INVALID_OTP", request);
-        }
     }
 
     public ResponseEntity<Object> resendOtp(String username, HttpServletRequest request) {
-        User user = userRepo.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        try{
 
-        if (!canSendOtp(user)) {
-            return new ResponseHandler().generateResponse("Please wait before requesting another OTP", HttpStatus.TOO_MANY_REQUESTS, null, "OTP_WAIT", request);
-        }
+            User user = userRepo.findByUsername(username)
+                    .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
-        if (sendOtp(user)) {
-            return new ResponseHandler().generateResponse("OTP resent successfully", HttpStatus.OK, user, null, request);
-        } else {
-            return new ResponseHandler().generateResponse("Failed to send OTP", HttpStatus.INTERNAL_SERVER_ERROR, null, "OTP_FAIL", request);
+            if (!canSendOtp(user)) {
+                return new ResponseHandler().generateResponse("Please wait before requesting another OTP", HttpStatus.TOO_MANY_REQUESTS, null, "OTP_WAIT", request);
+            }
+
+            if (sendOtp(user)) {
+                return new ResponseHandler().generateResponse("OTP resent successfully", HttpStatus.OK, user, null, request);
+            } else {
+                return new ResponseHandler().generateResponse("Failed to send OTP", HttpStatus.INTERNAL_SERVER_ERROR, null, "OTP_FAIL", request);
+            }
+        } catch (Exception e){
+
+            logException("resendOtp", e, request);
+            return new ResponseHandler().generateResponse("GAGAL RESEND OTP",HttpStatus.INTERNAL_SERVER_ERROR,username,"FERGS001",request);
+
         }
     }
 
@@ -341,6 +360,14 @@ public class UserService implements IService<User>, UserDetailsService {
         return user.getRoles().stream()
                 .map(role -> new SimpleGrantedAuthority(role.getName()))
                 .collect(Collectors.toSet());
+    }
+
+    private boolean canSendOtp(Optional<User> user) {
+        if (user.get().getLastOtpSentTime() != null) {
+            long elapsed = new Date().getTime() - user.get().getLastOtpSentTime().getTime();
+            return elapsed >= 10000; // 10 seconds cooldown
+        }
+        return true;
     }
 
     private void logException(String methodName, Exception e, HttpServletRequest request) {

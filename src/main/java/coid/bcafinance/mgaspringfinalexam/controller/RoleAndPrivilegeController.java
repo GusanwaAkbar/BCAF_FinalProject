@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/roles")
 public class RoleAndPrivilegeController {
@@ -42,4 +44,16 @@ public class RoleAndPrivilegeController {
         privilegeService.deletePrivilege(privilegeId);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/getAllRoles")
+    public ResponseEntity<List<Role>> getAllRoles() {
+        List<Role> roles = roleService.findAll();
+        if(roles.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(roles, HttpStatus.OK);
+    }
+
+
+
 }

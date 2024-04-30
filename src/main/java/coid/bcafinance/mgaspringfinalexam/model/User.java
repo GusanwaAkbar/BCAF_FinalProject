@@ -1,5 +1,7 @@
 package coid.bcafinance.mgaspringfinalexam.model;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.springframework.beans.PropertyValues;
@@ -13,6 +15,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "idUser")
 @Table(name = "MstUser")
 public class User {
     @Id
@@ -67,12 +70,15 @@ public class User {
     private Date lastOtpSentTime;
 
 
+
     @ManyToMany
     @JoinTable(
             name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "IdUser"),
             inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id")
     )
+
+
     private Set<Role> roles = new HashSet<>();
 
 

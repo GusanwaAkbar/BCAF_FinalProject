@@ -4,19 +4,18 @@ package coid.bcafinance.mgaspringfinalexam.controller;
 
 import coid.bcafinance.mgaspringfinalexam.ServiceV2.RekeningKoranServiceV2;
 import coid.bcafinance.mgaspringfinalexam.model.RekeningKoran;
+import coid.bcafinance.mgaspringfinalexam.service.DataRekeningKoranService;
 import coid.bcafinance.mgaspringfinalexam.service.RekeningKoranService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import java.util.Optional;
@@ -32,55 +31,68 @@ public class RekeningKoranController {
     @Autowired
     private RekeningKoranServiceV2 rekeningKoranServiceV2;
 
+    @Autowired
+    private DataRekeningKoranService dataRekeningKoranService;
+
 
     @GetMapping("/")
-    public Page<RekeningKoran> getAllRekeningKorans(
+    public ResponseEntity<?> getAllRekeningKorans(
             @RequestParam(required = false) String namaRekeningKoran,
-            @PageableDefault(size = 5, sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
+            @PageableDefault(size = 5, sort = "id", direction = Sort.Direction.ASC) Pageable pageable, HttpServletRequest request) {
 
-        return rekeningKoranService.getAllRekeningKorans(namaRekeningKoran, pageable);
+        return rekeningKoranService.getAllRekeningKorans(namaRekeningKoran, pageable, request);
     }
 
 
-
-//    @GetMapping("/")
-//    public Page<RekeningKoran> getAllRekeningKorans(@RequestParam(required = false) String namaRekeningKoran,
-//                                                    @PageableDefault(size = 10, sort = "namaRekeningKoran", direction = Sort.Direction.ASC) Pageable pageable) {
-//        return rekeningKoranServiceV2.getAllRekeningKorans(namaRekeningKoran, pageable);
-//    }
+    //error req
 
     @GetMapping("/{id}")
-    public ResponseEntity<RekeningKoran> getRekeningKoranById(@PathVariable @Min(1) Long id) {
-        Optional<RekeningKoran> rekeningKoran = rekeningKoranService.getRekeningKoranById(id);
-        return rekeningKoran.map(value -> new ResponseEntity<>(value, HttpStatus.OK)).orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+    public ResponseEntity<?> getRekeningKoranById(@PathVariable @Min(1) Long id,
+                                                  @RequestParam(defaultValue = "0") int page,
+                                                  @RequestParam(defaultValue = "10") int size,
+                                                  HttpServletRequest request) {
+        return rekeningKoranService.getRekeningKoranById(id, page, size, request);
     }
 
+    //v2
+    @GetMapping("/v2/{id}")
+    public ResponseEntity<?> getAllDataRekeningKoranByRekeningKoranId(
+            @PathVariable Long id,
+            @PageableDefault(size = 5, sort = "id", direction = Sort.Direction.ASC) Pageable pageable,
+            HttpServletRequest request) {
+
+        return dataRekeningKoranService.findAllByRekeningKoranId(id, pageable, request);
+    }
+
+
+    //error checkpoint
+
     @PostMapping("/")
-    public ResponseEntity<RekeningKoran> createRekeningKoran(@Valid @RequestBody RekeningKoran rekeningKoran) {
-        RekeningKoran createdRekeningKoran = rekeningKoranService.saveRekeningKoran(rekeningKoran);
-        return new ResponseEntity<>(createdRekeningKoran, HttpStatus.CREATED);
+    public ResponseEntity<Object> createRekeningKoran(@Valid @RequestBody RekeningKoran rekeningKoran, HttpServletRequest request) {
+
+
+
+        return rekeningKoranService.saveRekeningKoran(rekeningKoran, request);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<RekeningKoran> updateRekeningKoran(@PathVariable @Min(1) Long id, @Valid @RequestBody RekeningKoran rekeningKoran) {
+    public ResponseEntity<Object> updateRekeningKoran(@PathVariable @Min(1) Long id, @Valid @RequestBody RekeningKoran rekeningKoran, HttpServletRequest request) {
+        rekeningKoran.setId(id); // Ensure the ID is set based on the path variable.
+
         Optional<RekeningKoran> existingRekeningKoran = rekeningKoranService.getRekeningKoranById(id);
         if (existingRekeningKoran.isPresent()) {
-            rekeningKoran.setId(id);
-            RekeningKoran updatedRekeningKoran = rekeningKoranService.updateRekeningKoran(rekeningKoran);
-            return new ResponseEntity<>(updatedRekeningKoran, HttpStatus.OK);
+            return rekeningKoranService.updateRekeningKoran(rekeningKoran, request);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 
+
+
     @DeleteMapping("/{id}")
-    public ResponseEntity<HttpStatus> deleteRekeningKoran(@PathVariable @Min(1) Long id) {
-        try {
-            rekeningKoranService.deleteRekeningKoran(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity<Object> deleteRekeningKoran(@PathVariable @Min(1) Long id, HttpServletRequest request) {
+
+        return  rekeningKoranService.deleteRekeningKoran(id, request);
     }
 
 
