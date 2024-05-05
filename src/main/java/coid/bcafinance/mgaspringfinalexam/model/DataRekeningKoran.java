@@ -1,6 +1,7 @@
 package coid.bcafinance.mgaspringfinalexam.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -45,9 +46,10 @@ public class DataRekeningKoran {
     @Column(nullable = true, columnDefinition = "varchar(255) default 'admin'")
     private String updatedBy;
 
+
     @ManyToOne
-    @JoinColumn(name = "rekening_koran_id")
-    @JsonBackReference // Indicates that this is the non-owning side of the relationship
+    @JsonIgnore
+    @JoinColumn(name = "rekening_koran_id")// Indicates that this is the non-owning side of the relationship
     private RekeningKoran rekeningKoran;
 
 

@@ -1,27 +1,67 @@
 version: "3.8"
 services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-preview-ubuntu-22.04
+    container_name: sqlpreview
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ".,zzzzzA123"
+      MSSQL_PID: "Developer"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql # Persistent data storage
+
   finalproject-image:
-    container_name: mgaspringfinalexam-image
+    container_name: mga-image
     build:
       context: .
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
     environment:
+      SPRING_DATASOURCE_URL: "jdbc:sqlserver://sqlpreview:1433;databaseName=ujian2"
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD: "ee607d38a76a00a8099e79148b495ac1"
+      SPRING_JPA_SHOW_SQL: "true"
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      - sqlserver
+
+volumes:
+  sql_data:
 
 
-      HOST: host.docker.internal
-      PORT: 1433
-      DB_NAME: "ujian2"
-      DB_UNAME: sa
-      DB_PWD: ee607d38a76a00a8099e79148b495ac1
-      SHOW_SQL: "true"
-      DDL_AUTO: update
-      SCHEMA: dbo
-      SVR_PORT: 8080
 
-# How to start:
-# docker-compose up --build
 
-# change TAG:
-# docker tag finalproject-finalproject-image baru777/finalproject:1.0
+
+
+
+
+#version: "3.8"
+#services:
+#  finalproject-image:
+#    container_name: mgaspringfinalexam-image
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    ports:
+#      - "8081:8080"
+#    environment:
+#
+#
+#      HOST: host.docker.internal
+#      PORT: 1433
+#      DB_NAME: "ujian2"
+#      DB_UNAME: sa
+#      DB_PWD: ee607d38a76a00a8099e79148b495ac1
+#      SHOW_SQL: "true"
+#      DDL_AUTO: update
+#      SCHEMA: dbo
+#      SVR_PORT: 8080
+#
+## How to start:
+## docker-compose up --build
+#
+## change TAG:
+## docker tag finalproject-finalproject-image baru777/finalproject:1.0

@@ -9,6 +9,7 @@ import coid.bcafinance.mgaspringfinalexam.model.RekeningKoran;
 import coid.bcafinance.mgaspringfinalexam.repo.DataRekeningKoranRepository;
 import coid.bcafinance.mgaspringfinalexam.repo.RekeningKoranRepository;
 import coid.bcafinance.mgaspringfinalexam.util.LoggingFile;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.opencsv.CSVReader;
@@ -18,6 +19,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -41,6 +44,9 @@ public class DataRekeningKoranService {
 
     @Value("${django.service.url}")
     private String djangoServiceUrl;
+
+    ObjectMapper objectMapper = new ObjectMapper();
+    RestTemplate restTemplate = new RestTemplate();
 
     public Page<DataRekeningKoran> getAllDataRekeningKorans(Pageable pageable) {
         return dataRekeningKoranRepository.findAll(pageable);
@@ -104,7 +110,7 @@ public class DataRekeningKoranService {
                     HttpHeaders headers2 = new HttpHeaders();
                     headers2.setContentType(MediaType.APPLICATION_JSON);
                     HttpEntity<String> requestEntity = new HttpEntity<>(jsonData, headers2);
-                    ResponseEntity<String> responseEntity = restTemplate.postForEntity(djangoServiceUrl, requestEntity, String.class);
+                    ResponseEntity<String> responseEntity = restTemplate.postForEntity(djangoServiceUrl + "/predict_csv", requestEntity, String.class);
 
                     // Handle the response from Django
                     if (responseEntity.getStatusCode().is2xxSuccessful()) {
@@ -132,6 +138,9 @@ public class DataRekeningKoranService {
         return new ResponseHandler().generateResponse("FILE CSV IS EMPTY", HttpStatus.BAD_REQUEST, null, "FERGS001", request);
     }
 
+//    private DataRekeningKoran createDataRekeningKoran(String[] line, int nominalIndex, int deskripsiIndex) {
+//    }
+
     public ResponseEntity<Object> findAllByRekeningKoranId(Long rekeningKoranId, Pageable pageable, HttpServletRequest request) {
         try {
             Page<DataRekeningKoran> dataPage = dataRekeningKoranRepository.findByRekeningKoranId(rekeningKoranId, pageable);
@@ -145,6 +154,23 @@ public class DataRekeningKoranService {
             return new ResponseHandler().generateResponse("Error fetching data", HttpStatus.INTERNAL_SERVER_ERROR, null, "FERGS004", request);
         }
     }
+
+    // no paginasi
+
+    public ResponseEntity<Object> findAllByRekeningKoranId(Long rekeningKoranId, HttpServletRequest request) {
+        try {
+            List<DataRekeningKoran> dataList = dataRekeningKoranRepository.findByRekeningKoranId(rekeningKoranId);
+            if (!dataList.isEmpty()) {
+                return new ResponseHandler().generateResponse("Data fetched successfully", HttpStatus.OK, dataList, null, request);
+            } else {
+                return new ResponseHandler().generateResponse("No Data Found", HttpStatus.NOT_FOUND, null, "FERGS003", request);
+            }
+        } catch (Exception e) {
+            logException("Find All DataRekeningKoran By ID", e, request);
+            return new ResponseHandler().generateResponse("Error fetching data", HttpStatus.INTERNAL_SERVER_ERROR, null, "FERGS004", request);
+        }
+    }
+
 
     private int findColumnIndex(String[] headers, String columnName) {
         for (int i = 0; i < headers.length; i++) {
@@ -165,6 +191,35 @@ public class DataRekeningKoranService {
 
         return dataRekeningKoran;
     }
+
+
+    public ResponseEntity<Object> processSingleData(DataRekeningKoran dataRekeningKoran, HttpServletRequest request) throws JsonProcessingException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        String jsonData = objectMapper.writeValueAsString(dataRekeningKoran);
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        HttpEntity<String> requestEntity = new HttpEntity<>(jsonData, headers);
+
+        try {
+            ResponseEntity<String> responseEntity = restTemplate.postForEntity(djangoServiceUrl + "/predict_single_data", requestEntity, String.class);
+            if (responseEntity.getStatusCode().is2xxSuccessful()) {
+                JsonNode jsonNode = objectMapper.readTree(responseEntity.getBody());
+                String predictedLabel = jsonNode.path("predicted_labels").get(0).asText();
+
+                // Return the extracted label wrapped in a success response
+                return ResponseEntity.ok().contentType(MediaType.APPLICATION_JSON).body("{\"predictedLabel\":\"" + predictedLabel + "\"}");
+            } else {
+                // In case of non-successful response from Django
+                return new ResponseHandler().generateResponse("Failed to receive valid response from Django service", HttpStatus.BAD_REQUEST, null, "FERGS002", request);
+            }
+        } catch (Exception e) {
+            // Logging exception and returning a formatted error response
+            logException("processSingleData", e, request);
+            return new ResponseHandler().generateResponse("Error processing single data", HttpStatus.INTERNAL_SERVER_ERROR, null, "FERGS003", request);
+        }
+    }
+
 
     private DataRekeningKoran createDataRekeningKoran(String[] line, int nominalIndex, int deskripsiIndex) {
         double nominal = Double.parseDouble(line[nominalIndex]);

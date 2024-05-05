@@ -2,6 +2,7 @@ package coid.bcafinance.mgaspringfinalexam.controller;
 
 
 
+import coid.bcafinance.mgaspringfinalexam.handler.ResponseHandler;
 import coid.bcafinance.mgaspringfinalexam.model.DataRekeningKoran;
 import coid.bcafinance.mgaspringfinalexam.model.RekeningKoran;
 import coid.bcafinance.mgaspringfinalexam.service.DataRekeningKoranService;
@@ -47,6 +48,8 @@ public class DataRekeningKoranController {
     private DataRekeningKoranService dataRekeningKoranService;
 
 
+    @Value("${django.service.url}")
+    private String djangoServiceUrl;
     // Other mappings...
 
 
@@ -105,16 +108,41 @@ public class DataRekeningKoranController {
 
 
     @PostMapping("/{rekeningKoranId}")
-    public ResponseEntity<?> createDataRekeningKoran(@PathVariable Long rekeningKoranId, @Valid @RequestBody DataRekeningKoran dataRekeningKoran) {
-        try {
-            DataRekeningKoran createdDataRekeningKoran = dataRekeningKoranService.createDataRekeningKoran(rekeningKoranId, dataRekeningKoran);
-            return ResponseEntity.status(HttpStatus.CREATED).body(createdDataRekeningKoran);
-        }
-        catch (Exception ex) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to create Data Rekening Koran: " + ex.getMessage());
-        }
+    public ResponseEntity<Object> createDataRekeningKoran(@PathVariable Long rekeningKoranId, @Valid @RequestBody DataRekeningKoran dataRekeningKoran, HttpServletRequest request) {
+        return (ResponseEntity<Object>) dataRekeningKoranService.getRekeningKoranById(rekeningKoranId).map(rekeningKoran -> {
+            dataRekeningKoran.setRekeningKoran(rekeningKoran);
+            ResponseEntity<Object> predictionResponse = null;
+            try {
+                predictionResponse = dataRekeningKoranService.processSingleData(dataRekeningKoran, request);
+            } catch (JsonProcessingException e) {
+                throw new RuntimeException(e);
+            }
+
+            if (predictionResponse.getStatusCode().is2xxSuccessful()) {
+                // Extract the predicted label from the response body if necessary
+                String predictedLabel = extractPredictedLabel(predictionResponse);
+                dataRekeningKoran.setVerifikasi(predictedLabel);
+                DataRekeningKoran updatedDataRekeningKoran = dataRekeningKoranService.saveOrUpdateDataRekeningKoran(dataRekeningKoran);
+                return ResponseEntity.status(HttpStatus.CREATED).body(updatedDataRekeningKoran);
+            } else {
+                // Forward the error response from the service
+                return predictionResponse;
+            }
+        }).orElseGet(() -> new ResponseHandler().generateResponse("RekeningKoran with id " + rekeningKoranId + " not found", HttpStatus.NOT_FOUND, null, "FERGS004", request));
     }
 
+    private String extractPredictedLabel(ResponseEntity<Object> responseEntity) {
+        // Extracting label from the response body (assuming it's correctly formatted JSON string)
+        ObjectMapper mapper = new ObjectMapper();
+        try {
+            JsonNode root = mapper.readTree(responseEntity.getBody().toString());
+            return root.path("predictedLabel").asText();
+        } catch (IOException e) {
+            // Log and handle error appropriately
+
+            return "Error extracting label";
+        }
+    }
 
     @DeleteMapping("/{rekeningKoranId}/delete/{dataRekeningKoranId}")
     public ResponseEntity<HttpStatus> deleteDataRekeningKoran(@PathVariable("rekeningKoranId") Long rekeningKoranId, @PathVariable("dataRekeningKoranId") Long dataRekeningKoranId) {
@@ -166,7 +194,7 @@ public class DataRekeningKoranController {
             HttpEntity<String> requestEntity = new HttpEntity<>(jsonData, headers);
 
             // Send POST request to Django for prediction
-            ResponseEntity<String> responseEntity = restTemplate.postForEntity("http://127.0.0.1:8000/predict_single_data", requestEntity, String.class);
+            ResponseEntity<String> responseEntity = restTemplate.postForEntity(djangoServiceUrl+"/predict_single_data", requestEntity, String.class);
             String predictedLabel = responseEntity.getBody();
 
             // Deserialize predicted label JSON array

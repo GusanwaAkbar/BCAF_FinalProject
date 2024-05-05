@@ -58,6 +58,26 @@ public class RekeningKoranService {
     }
 
 
+    public ResponseEntity<?> getAllRekeningKoransNoPagination(String namaRekeningKoran, HttpServletRequest request) {
+        try {
+            List<RekeningKoran> result;
+            if (namaRekeningKoran != null && !namaRekeningKoran.trim().isEmpty()) {
+                result = rekeningKoranRepository.findByNamaRekeningKoranContaining(namaRekeningKoran);
+            } else {
+                result = rekeningKoranRepository.findAll();
+            }
+
+            return new ResponseHandler().generateResponse("GET berhasil",
+                    HttpStatus.OK,
+                    result,
+                    null, request);
+
+        } catch (Exception e) {
+            logException("getAllRekeningKoransNoPagination", e, request);
+            return new ResponseHandler().generateResponse("Error fetching data", HttpStatus.INTERNAL_SERVER_ERROR, null, "FERGS001", request);
+        }
+    }
+
 
 
     public ResponseEntity<Object> getRekeningKoranById(Long id, int page, int size, HttpServletRequest request) {

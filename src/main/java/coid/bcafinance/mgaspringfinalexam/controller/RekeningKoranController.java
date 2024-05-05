@@ -44,6 +44,18 @@ public class RekeningKoranController {
     }
 
 
+
+    @GetMapping("/all")
+    public ResponseEntity<?> getAllRekeningKoransNoPagination(
+            @RequestParam(required = false) String namaRekeningKoran, HttpServletRequest request) {
+
+        return rekeningKoranService.getAllRekeningKoransNoPagination(namaRekeningKoran, request);
+    }
+
+
+
+
+
     //error req
 
     @GetMapping("/{id}")
@@ -53,6 +65,12 @@ public class RekeningKoranController {
                                                   HttpServletRequest request) {
         return rekeningKoranService.getRekeningKoranById(id, page, size, request);
     }
+
+    @GetMapping("all/{id}")
+    public ResponseEntity<?> getRekeningKoranById(@PathVariable @Min(1) Long id, HttpServletRequest request) {
+        return dataRekeningKoranService.findAllByRekeningKoranId(id, request);
+    }
+
 
     //v2
     @GetMapping("/v2/{id}")

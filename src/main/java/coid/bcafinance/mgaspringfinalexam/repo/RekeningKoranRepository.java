@@ -5,10 +5,16 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import coid.bcafinance.mgaspringfinalexam.model.RekeningKoran;
 
+import java.util.List;
+
 @Repository
 public interface RekeningKoranRepository extends JpaRepository<RekeningKoran, Long> {
 
     Page<RekeningKoran> findByNamaRekeningKoranContaining(String namaRekeningKoran, Pageable pageable);
+
+    List<RekeningKoran> findByNamaRekeningKoranContaining(String namaRekeningKoran);
+
+
 
 }
 

@@ -44,7 +44,7 @@ public class RekeningKoran {
 
     @OneToMany(mappedBy = "rekeningKoran", cascade = CascadeType.ALL, orphanRemoval = true)
     //@JsonIgnore // Ignore this property during JSON serialization
-    @JsonManagedReference // Indicates that this is the owning side of the relationship
+    @JsonIgnore // Indicates that this is the owning side of the relationship
     private List<DataRekeningKoran> dataRekeningKoranList;
 
 
